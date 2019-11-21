@@ -21,7 +21,7 @@ class Test extends React.Component {
                 <img src={this.state.movie.Poster} />
     <p>{this.state.movie.Type}</p>
     <h1>{this.state.movie.Title}</h1>
-        <p>Starring: {this.state.movie.Actors}</p>
+        <p><b>Starring:</b> {this.state.movie.Actors}</p>
     <p>{this.state.movie.Plot}</p>
             </div>
         )
