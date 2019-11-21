@@ -2,6 +2,7 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import API from '../API'
+import SearchResult from './SearchResult';
 
 class SearchComponent extends React.Component {
 
@@ -19,12 +20,7 @@ class SearchComponent extends React.Component {
               this.setState({
                   search_result: data
               })
-            // check if we got an error back
             if (data.error) throw Error(data.error)
-            // here we know for sure that there was no error
-            // this.props.signIn(data)
-            // console.log(data)
-            // this.props.history.push('/home')
           })
           .catch(error => console.log(error))
       }
@@ -52,7 +48,9 @@ class SearchComponent extends React.Component {
           SUBMIT
         </Button>
                 <h2>Search Result</h2>
-                {this.state.search_result ? <h1>MOVIE GOES HERE!</h1> : null}
+                {this.state.search_result ? 
+                <SearchResult movie={this.state.search_result}/>
+                : null}
                 <h3>Search Result Details/Actions</h3>
             </div>
         )

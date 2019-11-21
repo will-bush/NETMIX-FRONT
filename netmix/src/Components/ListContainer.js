@@ -11,11 +11,11 @@ class ListContainer extends React.Component {
     componentDidMount() {
         // if (this.props.username === '') this.props.history.push('/signin')
         // else {
-            API.getLists()
-            .then(lists => this.setState({
-                lists: lists,
-                username: this.props.username
-            }))
+            // API.getLists()
+            // .then(lists => this.setState({
+            //     lists: lists,
+            //     username: this.props.username
+            // }))
         // }
     }
 
