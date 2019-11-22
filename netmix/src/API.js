@@ -7,7 +7,8 @@ const validateUrl = baseUrl + '/validate'
 const ListUrl = baseUrl + '/lists'
 const ListingURL = baseUrl + '/listings'
 const searchURL = "http://www.omdbapi.com/?apikey=a12b58ca&t="
-const contentURL = baseUrl + '/contents'
+const contentURL = baseUrl + '/contents/'
+const userURL = baseUrl + '/users/'
 
 const get = url =>
   fetch(url, {
@@ -31,9 +32,15 @@ const validate = () => get(validateUrl)
 
 const getLists = () => get(ListUrl)
 
+const getUser = (id) => get(userURL + id)
+
 const search = query => fetch(searchURL + query).then(resp => resp.json())
 
 const addMovieToDB = (movie) => post (contentURL, movie) 
+
+const getContent = (id) => get(contentURL + id)
+
+const createList = (ListData) => post (ListUrl, ListData)
 
 const addMovieToList = (ListID, MovieID ) =>
   fetch(ListingURL, {
@@ -53,5 +60,8 @@ export default {
   getLists,
   search,
   addMovieToDB,
-  addMovieToList
+  addMovieToList,
+  getUser,
+  getContent,
+  createList
 }

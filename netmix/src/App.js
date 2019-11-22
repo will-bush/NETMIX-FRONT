@@ -15,13 +15,17 @@ class App extends Component {
   }
 
   signIn = user => {
-    this.setState({ username: user.username, user_id: user.id  })
+    this.setState({ username: user.username,
+      user_id: user.id,
+    })
     localStorage.setItem('token', user.token)
+    // localStorage.setItem('lists', user.lists)
   }
 
   signOut = () => {
     this.setState({ username: '' })
     localStorage.removeItem('token')
+    this.props.history.push('/')
   }
 
   componentDidMount () {
@@ -31,6 +35,7 @@ class App extends Component {
         .then(data => {
           if (data.error) throw Error(data.error)
           this.signIn(data)
+          console.log(data)
           this.props.history.push('/home')
         })
         .catch(error => alert(error))

@@ -17,7 +17,7 @@ class SignInForm extends React.Component {
         if (data.error) throw Error(data.error)
         // here we know for sure that there was no error
         this.props.signIn(data)
-        console.log(data)
+        // console.log(data)
         this.props.history.push('/home')
       })
       .catch(error => console.log(error))

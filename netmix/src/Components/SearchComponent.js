@@ -32,16 +32,16 @@ class SearchComponent extends React.Component {
 
         return (
             <div>
-                <h1>SearchComponent</h1>
+                <h1>Search</h1>
                 <TextField
                     id='seachQuery'
-                    label='What do you want to watch?'
+                    label='What would you like to watch today?'
                     value={search_query}
                     onChange={handleChange}
                     margin='normal'
                     name='search_query'
                     type='text'
-                    fullWidth
+                    style = {{width: 270, margin: 25}}
                 />
                 <br/>
         <Button onClick={this.handleSubmit} variant='contained' color='primary'>
@@ -49,9 +49,8 @@ class SearchComponent extends React.Component {
         </Button>
                 <h2>Search Result</h2>
                 {this.state.search_result ? 
-                <SearchResult movie={this.state.search_result}/>
+                <SearchResult movie={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists}/>
                 : null}
-                <h3>Search Result Details/Actions</h3>
             </div>
         )
     }

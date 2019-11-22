@@ -5,8 +5,9 @@ import { Button } from '@material-ui/core'
 
 const Header = ({ username, signOut }) => (
   <header className='App-header'>
+    {/* <img src={logo} className='App-logo' alt='logo' /> */}
     <h1 className='App-title'>
-      {username ? `Welcome back, ${username}!` : 'Welcome to React.'}
+      {username ? `Welcome back, ${username}!` : 'NETMIX'}
       <br />
       {username && (
         <Button onClick={signOut} variant='contained' color='primary'>
