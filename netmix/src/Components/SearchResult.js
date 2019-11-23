@@ -18,13 +18,15 @@ class SearchResult extends React.Component {
     handleAddClick = (movie, listID) => {
         API.addMovieToDB(movie)
         .then(resp => API.addMovieToList(listID, resp.id))
-        // .then( res => showMovieOnList(listID, res.content))
+        .then(res => this.props.showMovieOnList(listID, res.content))
         // .then(res => console.log(res))
     }
 
     handleChange = (event) => {
         this.setState({value: event.target.value});
     }
+
+    
 
     render() {
 

@@ -49,7 +49,7 @@ class SearchComponent extends React.Component {
         </Button>
                 <h2>Search Result</h2>
                 {this.state.search_result ? 
-                <SearchResult movie={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists}/>
+                <SearchResult movie={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} showMovieonList={this.props.showMovieonList}/>
                 : null}
             </div>
         )
