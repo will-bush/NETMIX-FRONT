@@ -7,8 +7,10 @@ body {
 
 .main_card {
 	color: #fff;
-	width: 760px;
-	height: 390px;
+    width: 760px;
+    height: 390px;
+    /* height: auto;
+    min-height: 390px; */
 	margin: 50px auto;
 	display: -webkit-box;
 	display: -ms-flexbox;

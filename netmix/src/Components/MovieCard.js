@@ -1,13 +1,17 @@
 import React from 'react';
 import API from '../API';
 import './MovieCard.css';
-import SearchDetails from './SearchDetails';
+import Details from './Details';
+import Watch from './Watch';
+import Review from './Review';
+import Remove from './Remove'
 
 class MovieCard extends React.Component {
 
     state = {
         content: {},
-        show_detail: false
+        show_detail: false,
+        view: ""
     }
 
     componentDidMount() {
@@ -15,6 +19,12 @@ class MovieCard extends React.Component {
         .then( resp => this.setState({
             content: resp
         }))
+    }
+
+    hideExpandedView = () => {
+        this.setState({
+            view: ""
+        })
     }
 
     render() {
@@ -37,22 +47,23 @@ class MovieCard extends React.Component {
 				<p class="disc">{this.state.content.Plot}</p>
 				<a href={"https://www.imdb.com/title/" + this.state.content.imdbID} target="_blank">Read More</a>
 			<div class="social-btn">
-        {/* <!-- WATCH TRAILER--> */}
-				<button onClick={() => this.setState({show_detail: !this.state.show_detail})}>
-        <i class="fas fa-play"></i> {this.state.show_detail ? "HIDE INFO" : "SHOW INFO"}
+        {/* <!-- SHOW INFO --> */}
+				<button onClick={() => this.setState({view: "details"})}>
+                <i class="fas fa-play"></i>MORE INFO
+                {/* {this.state.show_detail ? "HIDE INFO" : "MORE INFO"} */}
 				</button>
-				{/* <!-- GET--> */}
-				{/* <button>
-					<i class="fas fa-download"></i> DOWNLOAD
-				</button> */}
-				{/* <!--USERS RATINGS--> */}
-				{/* <button>
-					<i class="fas fa-thumbs-up"></i> 97%
-				</button> */}
-				{/* <!--BOOKMARK--> */}
-				{/* <button>
-					<i class="fas fa-star"></i>
-				</button> */}
+				{/* <!-- GET SOURCES--> */}
+				<button onClick={() => this.setState({view: "watch"})}>
+					<i class="fas fa-download"></i> WATCH
+				</button >
+				{/* <!--CREATE REVIEW --> */}
+				<button onClick={() => this.setState({view: "review"})}>
+					<i class="fas fa-thumbs-up"></i> REVIEW
+				</button>
+				{/* <!-- REMOVE --> */}
+				<button onClick={() => this.setState({view: "remove"})}>
+					<i class="fas fa-star"></i>REMOVE
+				</button>
 			</div>	
 			</div>
 		</div>
@@ -67,7 +78,10 @@ class MovieCard extends React.Component {
 				</div>
 			</div>
 		</div>
-        {this.state.show_detail ? <SearchDetails movie={this.state.content}/> : null}
+        {this.state.view === "details" ? <Details movie={this.state.content} hide={this.hideExpandedView}/> : null}
+        {this.state.view === "watch" ? <Watch movie={this.state.content} hide={this.hideExpandedView}/> : null}
+        {this.state.view === "review" ? <Review movie={this.state.content} hide={this.hideExpandedView}/> : null}
+        {this.state.view === "remove" ? <Remove movie={this.state.content} hide={this.hideExpandedView}/> : null}
 	</div>
 // </div>
         )
