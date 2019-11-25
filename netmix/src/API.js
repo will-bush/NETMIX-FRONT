@@ -10,6 +10,7 @@ const ListingURL = baseUrl + '/listings'
 const searchURL = "http://www.omdbapi.com/?apikey=a12b58ca&t="
 const contentURL = baseUrl + '/contents/'
 const userURL = baseUrl + '/users/'
+const sourcesURL = "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term="
 
 const get = url =>
   fetch(url, {
@@ -69,6 +70,22 @@ fetch(ListingURL + "/" + listingID, {
     })
   }
 
+  const getSources = (movieTitle) => {
+    fetch(sourcesURL + movieTitle, {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com",
+		"x-rapidapi-key": "71a90a3dfdmshe9c671ab1abdae6p102fcejsnc16e071b0e3a"
+	}
+})
+.then(resp => resp.json())
+}
+// )
+// .catch(err => {
+// 	console.log(err);
+// });
+  // }
+
 export default {
   signIn,
   validate,
@@ -81,5 +98,6 @@ export default {
   createList,
   signUp,
   destroyListing,
-  deleteLIST
+  deleteLIST,
+  getSources
 }
