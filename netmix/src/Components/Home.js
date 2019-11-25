@@ -1,15 +1,26 @@
 import React from 'react';
 import SearchComponent from './SearchComponent';
 import ListContainer from './ListContainer';
-import { Route, withRouter, Switch } from 'react-router-dom';
+import ListsPage from './ListsPage';
+import SearchPage from './SearchPage';
+import FeedPage from './FeedPage';
+// import { Route, withRouter, Switch } from 'react-router-dom';
 import API from '../API'
+import NavBar from './NavBar'
 
 
 class Home extends React.Component {
 
     state = {
         user: {},
-        lists: []
+        lists: [],
+        page: ""
+    }
+
+    setPage = (page) => {
+        this.setState({
+            page: page
+        })
     }
 
     componentDidMount() {
@@ -28,24 +39,41 @@ class Home extends React.Component {
         })
     }
 
-    showMovieOnList = (listID, movie) => {
-        // WRITE A FUNCTION HERE THAT TAKES THE RESPONSE OF THE NEWLY CREATED LISTING AND PUSHES IT INTO THE CORRRECT LISTING ARRAY!
-        // const listToUpdate = this.state.lists.filter( list => list.id === listID)
-        this.setState({
-            lists: {
-                ...this.state.lists,
-                listings: [...this.state.lists.filter( list => list.id === listID), movie]
-            }
-    })
+    refreshData = () => {
+        API.getUser(this.props.user_id).then(user_object => this.setState({
+            lists: user_object.lists
+          }))
+    }
+
+   refreshLists = () => {
+    API.getUser(this.props.user_id).then(user_object => this.setState({
+        lists: user_object.lists
+      }))
+    }
+
+    deleteList = (listID) => {
+        API.deleteLIST(listID)
+        this.retrieve()
+        // THIS NEEDS IMPORVING SO THAT THE FUNCTIONS MAPS OVER THE LISTS LISTINGS AND DELETES THEM INDIVIDUALLY, BEFORE THEN DELETING THE LIST ITSELF.
+        // CURRENT FUNCTIONALITY ONLY ALLOWS FOR AN EMPTY LIST TO BE DELETED
+    }
+
+    retrieve = () => {
+        setTimeout(() => {
+            this.refreshLists()
+          }, 500);
     }
 
     render() {
 
         return (
             <div>
-                <h1>HOME PAGE</h1>
-                <SearchComponent user_id={this.props.user_id} lists={this.state.lists} showMovieonList={this.showMovieOnList}/>
-                <ListContainer user_id={this.props.user_id} lists={this.state.lists} add_list={this.addListToUser}/>
+                <NavBar setPage={this.setPage}/>
+                {this.state.page === "" ? <><SearchComponent user_id={this.props.user_id} lists={this.state.lists} refreshLists={this.refreshLists}/>
+                <ListContainer user_id={this.props.user_id} lists={this.state.lists} add_list={this.addListToUser} refreshLists={this.refreshLists} deleteList={this.deleteList}/> </>: null}
+                {this.state.page === "lists" ? <ListsPage lists={this.state.lists}/> : null}
+                {this.state.page === "feed" ? <FeedPage /> : null}
+                {this.state.page === "search" ? <SearchPage /> : null}
             </div>
         )
     }

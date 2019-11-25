@@ -2,6 +2,7 @@
 
 import { baseUrl } from './config'
 
+const signUpUrl = baseUrl + '/users'
 const signInUrl = baseUrl + '/signin'
 const validateUrl = baseUrl + '/validate'
 const ListUrl = baseUrl + '/lists'
@@ -25,6 +26,8 @@ const post = (url, data) =>
     },
     body: JSON.stringify(data)
   }).then(resp => resp.json())
+
+const signUp = (userInfo) => post(signUpUrl, userInfo)
 
 const signIn = (username, password) => post(signInUrl, { username, password })
 
@@ -54,6 +57,18 @@ const addMovieToList = (ListID, MovieID ) =>
     })
   })
 
+  const destroyListing = (listingID) => {
+fetch(ListingURL + "/" + listingID, {
+  method: 'DELETE'
+})
+  }
+
+  const deleteLIST = (listID) => {
+    fetch(ListUrl + "/" + listID, {
+      method: 'DELETE'
+    })
+  }
+
 export default {
   signIn,
   validate,
@@ -63,5 +78,8 @@ export default {
   addMovieToList,
   getUser,
   getContent,
-  createList
+  createList,
+  signUp,
+  destroyListing,
+  deleteLIST
 }

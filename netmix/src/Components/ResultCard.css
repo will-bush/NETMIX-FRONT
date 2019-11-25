@@ -121,7 +121,7 @@ button:hover {
 	        animation: bounce 1.0s -0.4s infinite;
 }
 
-/* .fa-play-circle:hover {
+.fa-play-circle:hover {
 	color: aqua;
 	animation: bounce 0.4s infinite;
 }
@@ -133,12 +133,12 @@ button:hover {
   }
   10% {
     transform: scale(1.8);
-    -webkit-transform: scale2);
+    -webkit-transform: scale(2);
     opacity: 0;
 		}
-} */
+}
 
-/* @keyframes bounce {
+@keyframes bounce {
   8% {
     transform: scale(0.3);
     -webkit-transform: scale(0.8);
@@ -146,10 +146,10 @@ button:hover {
   }
   20% {
     transform: scale(1.8);
-    -webkit-transform: scale2);
+    -webkit-transform: scale(2);
     opacity: 0;
 		}
-} */
+}
 
 
 

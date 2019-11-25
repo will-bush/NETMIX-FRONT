@@ -18,7 +18,8 @@ class SearchResult extends React.Component {
     handleAddClick = (movie, listID) => {
         API.addMovieToDB(movie)
         .then(resp => API.addMovieToList(listID, resp.id))
-        .then(res => this.props.showMovieOnList(listID, res.content))
+        // .then(res => this.props.showMovieOnList(listID, res.content))
+        .then(this.props.refreshData())
         // .then(res => console.log(res))
     }
 

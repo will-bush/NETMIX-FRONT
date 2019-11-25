@@ -33,55 +33,55 @@ class MovieCard extends React.Component {
             // <div>
             //     <img src={this.state.content.Poster}/>
             //     <h3>{this.state.content.Title}</h3>
-    <div class="wrapper">
-	<div class="main_card">
-		<div class="card_left">
-			<div class="card_datails">
+    <div className="wrapper">
+	<div className="main_card">
+		<div className="card_left">
+			<div className="card_datails">
 				<h1>{this.state.content.Title}</h1>
-				<div class="card_cat">
-					<p class="PG">{this.state.content.Rated}</p>
-					<p class="year">{this.state.content.Released}</p>
-					<p class="genre">{this.state.content.Genre}</p>
-					<p class="time">{this.state.content.Runtime}</p>
+				<div className="card_cat">
+					<p className="rating">{this.state.content.Rated}</p>
+					<p className="year">{this.state.content.Year}</p>
+					<p className="genre">{this.state.content.Genre}</p>
+					<p className="time">{this.state.content.Runtime}</p>
 				</div>
-				<p class="disc">{this.state.content.Plot}</p>
-				<a href={"https://www.imdb.com/title/" + this.state.content.imdbID} target="_blank">Read More</a>
-			<div class="social-btn">
+				<p className="disc">{this.state.content.Plot}</p>
+				<a href={"https://www.imdb.com/title/" + this.state.content.imdbID} target="_blank" rel="noopener noreferrer">Read More</a>
+			<div className="social-btn">
         {/* <!-- SHOW INFO --> */}
 				<button onClick={() => this.setState({view: "details"})}>
-                <i class="fas fa-play"></i>MORE INFO
+                <i className="fas fa-play"></i>MORE INFO
                 {/* {this.state.show_detail ? "HIDE INFO" : "MORE INFO"} */}
 				</button>
 				{/* <!-- GET SOURCES--> */}
 				<button onClick={() => this.setState({view: "watch"})}>
-					<i class="fas fa-download"></i> WATCH
+					<i className="fas fa-download"></i> WATCH
 				</button >
 				{/* <!--CREATE REVIEW --> */}
 				<button onClick={() => this.setState({view: "review"})}>
-					<i class="fas fa-thumbs-up"></i> REVIEW
+					<i className="fas fa-thumbs-up"></i> REVIEW
 				</button>
 				{/* <!-- REMOVE --> */}
 				<button onClick={() => this.setState({view: "remove"})}>
-					<i class="fas fa-star"></i>REMOVE
+					<i className="fas fa-star"></i>REMOVE
 				</button>
 			</div>	
 			</div>
 		</div>
-		<div class="card_right">
-			<div class="img_container">
+		<div className="card_right">
+			<div className="img_container">
 				<img src={this.state.content.Poster} alt=""/>
 				</div>
-				<div class="play_btn">
-					<a href="https://www.imdb.com/title/tt4912910/" target="_blank">
-						<i class="fas fa-play-circle"></i>
+				<div className="play_btn">
+					<a href="https://www.imdb.com/title/tt4912910/" target="_blank" rel="noopener noreferrer">
+						<i className="fas fa-play-circle"></i>
 					</a>
 				</div>
 			</div>
 		</div>
         {this.state.view === "details" ? <Details movie={this.state.content} hide={this.hideExpandedView}/> : null}
         {this.state.view === "watch" ? <Watch movie={this.state.content} hide={this.hideExpandedView}/> : null}
-        {this.state.view === "review" ? <Review movie={this.state.content} hide={this.hideExpandedView}/> : null}
-        {this.state.view === "remove" ? <Remove movie={this.state.content} hide={this.hideExpandedView}/> : null}
+        {this.state.view === "review" ? <Review movie={this.state.content} hide={this.hideExpandedView} listing_data={this.props.listing_data}/> : null}
+        {this.state.view === "remove" ? <Remove movie={this.state.content} hide={this.hideExpandedView} listing_data={this.props.listing_data} refreshLists={this.props.refreshLists}/> : null}
 	</div>
 // </div>
         )

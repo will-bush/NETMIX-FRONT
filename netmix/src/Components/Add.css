@@ -1,7 +1,7 @@
-.details {
+.add {
 	color: #fff;
 	width: 760px;
-	height: auto;
+	height: 390px;
     /* margin: 50px auto; */
     margin-top: -50px;
     margin-bottom: 50px;
@@ -21,13 +21,13 @@
 	        box-shadow: 0 0 40px rgba(0,0,0,0.3);
 }
 
-.details_content {
+.add_content {
 	width: 90%;
 	padding: 30px;
     margin-top: -25px;
     text-align: left;
 }
 
-.details_content  h1 {
+.add_content  h1 {
     font-size: 30px;
 }

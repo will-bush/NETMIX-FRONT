@@ -3,6 +3,7 @@ import { Route, withRouter, Switch } from 'react-router-dom'
 
 import Header from './Components/Header'
 import SignInForm from './Components/SignInForm'
+import SignUpForm from './Components/SignUpForm'
 import Home from './Components/Home'
 
 import './App.css'
@@ -50,6 +51,12 @@ class App extends Component {
           {/* <Route exact path='/' component={() => <h1>Home page!</h1>} /> */}
           <Route
             path='/' exact
+            component={routerProps => (
+              <SignUpForm {...routerProps} signIn={this.signIn} />
+            )}
+          />
+          <Route
+            path='/signin'
             component={routerProps => (
               <SignInForm {...routerProps} signIn={this.signIn} />
             )}

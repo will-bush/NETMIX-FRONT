@@ -6,26 +6,15 @@ import NewlistForm from './NewListForm';
 
 class ListContainer extends React.Component {
 
-    // constructor(props) {
-    //     super(props);
-
-    //     this.state = {
-    //         selected_list: 0,
-    //         create_new_list: false,
-    //         lists: this.props.lists,
-    //         test: ''
-    //     };
-    // }
-
     state = {
         create_new_list: false,
     }
 
-    // componentDidMount() {
-    //     this.setState({
-    //         lists: this.props.lists
-    //     })
-    // }
+    resetListForm = () => {
+        this.setState({
+            create_new_list: false
+        })
+    }
 
     render() {
 
@@ -39,11 +28,11 @@ class ListContainer extends React.Component {
                     CREATE A NEW LIST
                 </Button>
                 {this.state.create_new_list ?
-                <NewlistForm user_id={this.props.user_id} add_list={this.props.add_list}/>
+                <NewlistForm user_id={this.props.user_id} add_list={this.props.add_list} reset={this.resetListForm}/>
                 : null}
                 {this.props.lists ?
                 this.props.lists.map(list =>
-                <ListComponent list_data={list}/>)
+                <ListComponent list_data={list} refreshLists={this.props.refreshLists} deleteList={this.props.deleteList}/>)
                 : null}
             </div>
         )
