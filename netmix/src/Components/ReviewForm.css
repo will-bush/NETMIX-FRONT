@@ -1,0 +1,13 @@
+.reviewForm {
+    background-color:#fff;
+    border-radius: 10px;
+}
+
+h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.submitButton {
+    float: right;
+}

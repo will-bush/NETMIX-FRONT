@@ -3,6 +3,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import ListComponent from './ListComponent';
 import NewlistForm from './NewListForm';
+import './ListContainer.css';
 
 class ListContainer extends React.Component {
 
@@ -19,11 +20,11 @@ class ListContainer extends React.Component {
     render() {
 
         return (
-            <div>
-                <h1>List Container</h1>
+            <div className="listContainer">
+                <h1>Your Lists</h1>
                 <Button
                 variant='contained'
-                color='primary'
+                color='secondary'
                 onClick={() => this.setState({create_new_list: true})}>
                     CREATE A NEW LIST
                 </Button>

@@ -1,0 +1,15 @@
+h1 {
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+
+.noPadding {
+    padding: 0px;
+    margin: 0px;
+}
+
+.delete {
+    padding: 0px;
+    margin: 0px;
+    color: #e60a14;
+}

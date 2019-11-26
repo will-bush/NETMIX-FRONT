@@ -80,11 +80,17 @@ fetch(ListingURL + "/" + listingID, {
 })
 .then(resp => resp.json())
 }
-// )
-// .catch(err => {
-// 	console.log(err);
-// });
-  // }
+
+const postReview = (listingID, review) =>
+fetch(ListingURL + '/' + listingID, {
+  method: 'PATCH',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    review: review
+  })
+}).then(resp => resp.json())
 
 export default {
   signIn,
@@ -99,5 +105,6 @@ export default {
   signUp,
   destroyListing,
   deleteLIST,
-  getSources
+  getSources,
+  postReview
 }

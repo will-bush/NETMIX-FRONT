@@ -32,6 +32,9 @@ class NewListForm extends React.Component {
     return (
       <div>
         <TextField
+          variant="filled"
+          className="input"
+          color="secondary"
           id='listnameInput'
           label='List Name'
           value={list_name}
@@ -41,6 +44,9 @@ class NewListForm extends React.Component {
         />
         <br />
         <TextField
+          variant="filled"
+          className="input"
+          color="secondary"
           id='listdescriptionInput'
           label='List Description'
           value={list_description}
@@ -49,7 +55,7 @@ class NewListForm extends React.Component {
           name='list_description'
         />
         <br />
-        <Button onClick={handleSubmit} variant='contained' color='primary'>
+        <Button onClick={handleSubmit} variant='contained' color='secondary'>
           SUBMIT
         </Button>
       </div>

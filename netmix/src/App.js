@@ -46,7 +46,7 @@ class App extends Component {
   render () {
     return (
       <div className='App'>
-        <Header username={this.state.username} signOut={this.signOut} />
+        {/* <Header username={this.state.username} signOut={this.signOut} /> */}
         <Switch>
           {/* <Route exact path='/' component={() => <h1>Home page!</h1>} /> */}
           <Route

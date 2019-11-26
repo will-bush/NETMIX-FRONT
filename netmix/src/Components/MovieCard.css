@@ -21,7 +21,7 @@ body {
 	background: -webkit-gradient(linear, left top, right top, from(#92FE9D), to(#00C9FF));
 	background: -webkit-linear-gradient(left, #92FE9D, #00C9FF);
 	background: -o-linear-gradient(left, #92FE9D, #00C9FF); */
-	background: linear-gradient(to right, #1c1e21, #1c1e21); 
+	background: linear-gradient(to right, #3a3b3b, #1c1e21); 
 	-webkit-box-shadow: 0 0 40px rgba(0,0,0,0.3); 
 	        box-shadow: 0 0 40px rgba(0,0,0,0.3);
 }
@@ -92,7 +92,7 @@ button {
 	margin-top: 30px;
 	margin-left: 10px;
 	background: #e60a14;
-	border-radius: 0px;
+	border-radius: 5px;
 	-webkit-box-shadow: 0 0 20px rgba(0,0,0,0.2);
 	        box-shadow: 0 0 20px rgba(0,0,0,0.2);
 	-webkit-transition: 300ms ease-in-out;

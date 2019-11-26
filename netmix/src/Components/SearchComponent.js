@@ -41,6 +41,9 @@ class SearchComponent extends React.Component {
             <div className="search">
                 {/* <h1>Search</h1> */}
                 <TextField
+                variant="filled"
+                className="input"
+                color="secondary"
                     id='seachQuery'
                     label='What would you like to watch today?'
                     value={search_query}
@@ -48,10 +51,10 @@ class SearchComponent extends React.Component {
                     margin='normal'
                     name='search_query'
                     type='text'
-                    style = {{width: 270, margin: 25}}
+                    style = {{width: 300, margin: 25}}
                 />
                 <br/>
-        <Button onClick={this.handleSubmit} variant='contained' color='primary'>
+        <Button onClick={this.handleSubmit} variant='contained' color='secondary'>
           SUBMIT
         </Button>
                 {/* <h2>Search Result</h2> */}

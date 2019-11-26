@@ -45,11 +45,11 @@ class Add extends React.Component {
                             {this.props.lists.map(list => <option value={list.id}>{list.list_name}</option>)}
                         </select>
                     </label>
-                    <p>MAYBE - Allow user to leave a written or scored review of the movie if they wish.</p>
+                    {/* <p>MAYBE - Allow user to leave a written or scored review of the movie if they wish.</p>
                     <p>MAYBE - Allow user to create a new form at this point if they wish.</p>
-                    <p>IS THIS FEATURE BETTER LOCATED IN THE MOVIECARD COMPONENT?</p>
-                    <Button variant='contained' color='primary' onClick={() => this.handleAddClick(this.props.movie, this.state.value)}>ADD TO LIST</Button>
-                    <Button variant='contained' color='primary' onClick={this.props.hide}>HIDE</Button>
+                    <p>IS THIS FEATURE BETTER LOCATED IN THE MOVIECARD COMPONENT?</p> */}
+                    <Button variant='contained' color='secondary' onClick={() => this.handleAddClick(this.props.movie, this.state.value)}>ADD TO LIST</Button>
+                    <Button variant='contained' color='secondary' onClick={this.props.hide}>HIDE</Button>
                         {/* <p>{this.props.movie.Actors}</p> */}
                 </div>
             </div>

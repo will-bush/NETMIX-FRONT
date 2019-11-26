@@ -4,10 +4,10 @@ import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
-import Box from '@material-ui/core/Box';
+// import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-// import './SignUpForm.css';  
+import './SignUpForm.css';  
 
 export class SignUpForm extends Component {
   state = {
@@ -25,6 +25,7 @@ export class SignUpForm extends Component {
 
     function Copyright() {
         return (
+          <div className="copyright">
           <Typography variant="body2" color="textSecondary" align="center">
             {'Copyright © '}
             <Link color="inherit" href="https://material-ui.com/">
@@ -33,11 +34,13 @@ export class SignUpForm extends Component {
             {new Date().getFullYear()}
             {'.'}
           </Typography>
+          </div>
         );
       }
 
     return (
       <div className="background">
+        <div className="spacer"></div>
         <Container className="contain" component="main" maxWidth="xs">
       <CssBaseline />
       <div>
@@ -49,12 +52,13 @@ export class SignUpForm extends Component {
         </Typography>
       <form>
         <TextField
+            color="secondary"
             className="input"
             type="text"
             name="name"
             value={this.state.name}
             onChange={this.handleChange}
-            variant="outlined"
+            variant="filled"
             margin="normal"
             required
             fullWidth
@@ -65,12 +69,13 @@ export class SignUpForm extends Component {
             {this.state.errors.fullName.length > 0 && 
                 <span className='error'>{this.state.errors.fullName}</span>}
         <TextField
+            color="secondary"
             className="input"
             type="text"
             name="username"
             value={this.state.username}
             onChange={this.handleChange}
-            variant="outlined"
+            variant="filled"
             margin="normal"
             required
             fullWidth
@@ -96,12 +101,13 @@ export class SignUpForm extends Component {
         {this.state.errors.email.length > 0 && 
                 <span className='error'>{this.state.errors.email}</span>} */}
         <TextField
+            color="secondary"
             className="input"
             type="password"
             name="password"
             value={this.state.password}
             onChange={this.handleChange}
-            variant="outlined"
+            variant="filled"
             margin="normal"
             required
             fullWidth
@@ -117,24 +123,24 @@ export class SignUpForm extends Component {
             onClick={this.signUp}
             fullWidth
             variant="contained"
-            color="primary"
+            color="secondary"
         >Sign up</Button>
         : 
         <Button
             onClick={this.signUp}
             fullWidth
             variant="contained"
-            color="primary"
+            color="secondary"
         >Sign up</Button> }
       </form>
       </div>
       <p>Already a member?</p>
-        <Button onClick={() => this.props.history.push('/signin')} variant='contained' color='primary'>
+        <Button onClick={() => this.props.history.push('/signin')} variant='contained' color="secondary">
           SIGN IN
         </Button>
-      <Box mt={5}>
+      {/* <Box mt={5}>
         <Copyright />
-      </Box>
+      </Box> */}
       </Container>
       </div>
     );
