@@ -1,8 +1,8 @@
 import React from 'react';
 import './Watch.css';
 import Button from '@material-ui/core/Button'
-import API from '../API';
-import WatchLink from './WatchLink';
+// import API from '../API';
+// import WatchLink from './WatchLink';
 
 
 class Watch extends React.Component {

@@ -11,7 +11,7 @@ class ListComponent extends React.Component {
         <p>{this.props.list_data.description}</p>
             <p onClick={() => this.props.deleteList(this.props.list_data.id)}>Delete list</p>
             {this.props.list_data.listings && this.props.list_data.listings.map(listing =>
-            <MovieCard listing_data={listing} refreshLists={this.props.refreshLists}/>
+            <MovieCard key={listing.id} listing_data={listing} refreshLists={this.props.refreshLists}/>
             )}   
         </div>
     

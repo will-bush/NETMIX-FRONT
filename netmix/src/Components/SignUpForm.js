@@ -7,7 +7,7 @@ import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import './SignUpForm.css';  
+// import './SignUpForm.css';  
 
 export class SignUpForm extends Component {
   state = {
@@ -38,17 +38,18 @@ export class SignUpForm extends Component {
 
     return (
       <div className="background">
-        <Container component="main" maxWidth="xs">
+        <Container className="contain" component="main" maxWidth="xs">
       <CssBaseline />
       <div>
         {/* <Avatar>
           <LockOutlinedIcon />
         </Avatar> */}
         <Typography className="title" component="h1" variant="h5">
-          Sign up
+          Sign Up
         </Typography>
       <form>
         <TextField
+            className="input"
             type="text"
             name="name"
             value={this.state.name}
@@ -64,6 +65,7 @@ export class SignUpForm extends Component {
             {this.state.errors.fullName.length > 0 && 
                 <span className='error'>{this.state.errors.fullName}</span>}
         <TextField
+            className="input"
             type="text"
             name="username"
             value={this.state.username}
@@ -94,6 +96,7 @@ export class SignUpForm extends Component {
         {this.state.errors.email.length > 0 && 
                 <span className='error'>{this.state.errors.email}</span>} */}
         <TextField
+            className="input"
             type="password"
             name="password"
             value={this.state.password}
@@ -125,6 +128,10 @@ export class SignUpForm extends Component {
         >Sign up</Button> }
       </form>
       </div>
+      <p>Already a member?</p>
+        <Button onClick={() => this.props.history.push('/signin')} variant='contained' color='primary'>
+          SIGN IN
+        </Button>
       <Box mt={5}>
         <Copyright />
       </Box>
@@ -170,7 +177,13 @@ export class SignUpForm extends Component {
   signUp = event => {
     event.preventDefault();
     console.log(this.state)
-    API.signUp(this.state)
+    let user = { user: {
+      name: this.state.name,
+      username: this.state.username,
+      password: this.state.password
+    }
+    }
+    API.signUp(user)
     .then(console.log)
 }
 

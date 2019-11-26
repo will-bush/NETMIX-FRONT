@@ -55,8 +55,8 @@ class SearchComponent extends React.Component {
           SUBMIT
         </Button>
                 {/* <h2>Search Result</h2> */}
-                {this.state.search_result ? 
-                <ResultCard movie={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch}/>
+                {this.state.search_result ? <ResultCard movie={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch}/>
+                // <ResultCard movie={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch}/>
                 : null}
             </div>
         )

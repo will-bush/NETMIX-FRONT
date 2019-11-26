@@ -10,7 +10,7 @@ ul {
     float: left;
   }
   
-  li a {
+  li p {
     display: block;
     color: white;
     text-align: center;
@@ -20,4 +20,8 @@ ul {
   
   li a:hover {
     background-color: #111;
+  }
+
+  .signout {
+    float: right
   }

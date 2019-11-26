@@ -12,6 +12,7 @@
 	display: flex;
 	max-width: 770px;
 	background: #1c1e21; 
+	border-radius: 0px 0px 10px 10px;
 	/* background: -webkit-linear-gradient(to right, #92FE9D, #00C9FF);
 	background: -webkit-gradient(linear, left top, right top, from(#92FE9D), to(#00C9FF));
 	background: -webkit-linear-gradient(left, #92FE9D, #00C9FF);

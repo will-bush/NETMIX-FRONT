@@ -1,8 +1,22 @@
 .title {
     text-align: center;
     padding-top: 20px;
+    color: white;
 }
 
 .background {
-    /* background-color: rgb(241, 163, 163); */
+    background-color: rgb(241, 163, 163);
+}
+
+.contain {
+    background-color:#1c1e21;
+    padding-bottom: 20px;
+}
+
+.input {
+    background-color:#fff;
+}
+
+p {
+    color: white;
 }

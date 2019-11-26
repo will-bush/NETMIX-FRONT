@@ -7,11 +7,13 @@ class NavBar extends React.Component {
 
         return (
             <div>
-                <ul>
-                    <li><a href="" onClick={() => this.props.setPage("search")}>SEARCH</a></li>
-                    <li><a href="" onClick={() => this.props.setPage("lists")}>LISTS</a></li>
-                    <li><a href="" onClick={() => this.props.setPage("feed")}>FEED</a></li>
-                    <li><a href="" onClick={() => this.props.setPage("following")}>FOLLOWING</a></li>
+                <ul className="navbar">
+                    <li><p onClick={() => this.props.setPage("")}>HOME</p></li>
+                    <li><p onClick={() => this.props.setPage("search")}>SEARCH</p></li>
+                    <li><p onClick={() => this.props.setPage("lists")}>LISTS</p></li>
+                    <li><p onClick={() => this.props.setPage("feed")}>FEED</p></li>
+                    <li><p onClick={() => this.props.setPage("following")}>FOLLOWING</p></li>
+                    <li className="signout" ><p onClick={() => this.props.signOut()}>SIGN OUT</p></li>
                 </ul>
             </div>
         )
