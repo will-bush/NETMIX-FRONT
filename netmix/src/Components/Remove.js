@@ -22,7 +22,7 @@ class Remove extends React.Component {
         setTimeout(() => {
             // this.props.refeshLists()
             this.state.function()
-          }, 500);
+          }, 100);
     }
 
     render() {

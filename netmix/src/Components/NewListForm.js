@@ -17,8 +17,10 @@ class NewListForm extends React.Component {
           description: this.state.list_description
       }
       API.createList(listData)
-      .then(resp => this.props.add_list(resp))
+      .then(() => this.props.refreshLists())
+      // .then(resp => this.props.add_list(resp))
       .then(this.props.reset())
+      // .then(this.props.refreshLists())
     //   .then(console.log)
   }
 

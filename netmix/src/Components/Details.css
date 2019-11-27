@@ -32,3 +32,12 @@
 .details_content  h1 {
     font-size: 30px;
 }
+
+.column {
+	float: left;
+  width: 50%;
+}
+
+.hide_details {
+	float: right;
+}

@@ -17,7 +17,11 @@ class ResultCard extends React.Component {
         this.setState({
             view: ""
         })
-    }
+	}
+	
+	componentDidMount() {
+		// this.props.refreshLists()
+	}
 
     render() {
 
@@ -34,7 +38,6 @@ class ResultCard extends React.Component {
 					<p class="time">{this.props.movie.Runtime}</p>
 				</div>
 				<p class="disc">{this.props.movie.Plot}</p>
-				<a href={"https://www.imdb.com/title/" + this.props.movie.imdbID} target="_blank" rel="noopener noreferrer">Read More</a>
 			<div class="social-btn">
         {/* <!-- SHOW INFO --> */}
 				<button onClick={() => this.setState({view: "details"})}>

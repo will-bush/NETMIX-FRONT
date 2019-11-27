@@ -29,11 +29,11 @@ class ListContainer extends React.Component {
                     CREATE A NEW LIST
                 </Button>
                 {this.state.create_new_list ?
-                <NewlistForm user_id={this.props.user_id} add_list={this.props.add_list} reset={this.resetListForm}/>
+                <NewlistForm user_id={this.props.user_id} add_list={this.props.add_list} reset={this.resetListForm} refreshLists={this.props.refreshLists} scrollToNewList={this.props.scrollToNewList}/>
                 : null}
                 {this.props.lists ?
                 this.props.lists.map(list =>
-                <ListComponent list_data={list} refreshLists={this.props.refreshLists} deleteList={this.props.deleteList}/>)
+                <ListComponent id={list.id }key={list.id }list_data={list} refreshLists={this.props.refreshLists} deleteList={this.props.deleteList}/>)
                 : null}
             </div>
         )

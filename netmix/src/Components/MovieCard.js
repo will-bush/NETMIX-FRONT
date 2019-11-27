@@ -45,7 +45,7 @@ class MovieCard extends React.Component {
 					<p className="time">{this.state.content.Runtime}</p>
 				</div>
 				<p className="disc">{this.state.content.Plot}</p>
-				<a href={"https://www.imdb.com/title/" + this.state.content.imdbID} target="_blank" rel="noopener noreferrer">Read More</a>
+				{/* <a href={"https://www.imdb.com/title/" + this.state.content.imdbID} target="_blank" rel="noopener noreferrer">Read More</a> */}
 			<div className="social-btn">
         {/* <!-- SHOW INFO --> */}
 				<button onClick={() => this.setState({view: "details"})}>

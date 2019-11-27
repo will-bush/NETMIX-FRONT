@@ -64,13 +64,17 @@ class Home extends React.Component {
           }, 500);
     }
 
+    scrollToNewList = (id) => {
+        document.getElementById(id).scrollIntoView();
+    }
+
     render() {
 
         return (
             <div>
                 <NavBar setPage={this.setPage} signOut={this.props.signOut}/>
-                {this.state.page === "" ? <><SearchComponent user_id={this.props.user_id} lists={this.state.lists} refreshLists={this.refreshLists}/>
-                <ListContainer user_id={this.props.user_id} lists={this.state.lists} add_list={this.addListToUser} refreshLists={this.refreshLists} deleteList={this.deleteList}/> </>: null}
+                {this.state.page === "" ? <><SearchComponent user_id={this.props.user_id} lists={this.state.lists} refreshLists={this.refreshLists} add_list={this.addListToUser}/>
+                <ListContainer user_id={this.props.user_id} lists={this.state.lists} add_list={this.addListToUser} refreshLists={this.refreshLists} deleteList={this.deleteList} scrollToNewList={this.scrollToNewList}/> </>: null}
                 {this.state.page === "lists" ? <ListsPage lists={this.state.lists}/> : null}
                 {this.state.page === "feed" ? <FeedPage /> : null}
                 {this.state.page === "search" ? <SearchPage /> : null}

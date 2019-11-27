@@ -10,3 +10,8 @@
     background-color:#fff;
     border-radius: 10px;
 }
+
+.search h3 {
+  color: white;
+  padding-top: 20px;
+}

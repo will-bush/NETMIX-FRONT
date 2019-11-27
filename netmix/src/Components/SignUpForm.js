@@ -182,7 +182,7 @@ export class SignUpForm extends Component {
 
   signUp = event => {
     event.preventDefault();
-    console.log(this.state)
+    // console.log(this.state)
     let user = { user: {
       name: this.state.name,
       username: this.state.username,
@@ -190,7 +190,11 @@ export class SignUpForm extends Component {
     }
     }
     API.signUp(user)
-    .then(console.log)
+    .then(resp => this.props.signIn(resp))
+    this.props.history.push('/home')
+    // this.props.signIn(data)
+        // console.log(data)
+        // this.props.history.push('/home')
 }
 
 }

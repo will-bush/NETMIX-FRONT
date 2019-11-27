@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button'
 import API from '../API'
 import ResultCard from './ResultCard';
 import './SearchComponent.css';
+import NewListForm from './NewListForm';
 
 class SearchComponent extends React.Component {
 
@@ -39,7 +40,8 @@ class SearchComponent extends React.Component {
 
         return (
             <div className="search">
-                {/* <h1>Search</h1> */}
+                <h3>Quick Search</h3>
+                {/* {this.props.lists.length === 0 ? <NewListForm user_id={this.props.user_id} add_list={this.props.add_list} reset={this.resetListForm}/> : null} */}
                 <TextField
                 variant="filled"
                 className="input"
