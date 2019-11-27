@@ -52,7 +52,7 @@ class Watch extends React.Component {
                 <div class="watch_content">
                     <h1>Watch component</h1>
                     <p>You can currently watch {this.props.movie.Title} on the following sites:</p>
-                    <Button variant='contained' color='primary' onClick={() => this.getSources(this.props.movie.Title)}>GET SOURCES</Button>
+                    {/* <Button variant='contained' color='primary' onClick={() => this.getSources(this.props.movie.Title)}>GET SOURCES</Button> */}
                     {/* {this.state.refinedSources.length > 0 ? <p>THIS IS HOW WE MAP!</p> : null}
                      */}
                      {this.state.refinedSources.length > 0 ? this.printSources() : null}

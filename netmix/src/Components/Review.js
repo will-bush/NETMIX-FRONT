@@ -28,7 +28,7 @@ class Review extends React.Component {
                 <div class="review_content">
                     {/* <h1>Review</h1> */}
                     {this.state.review !== null ?
-                    <p>Review: {this.state.review}</p> : <ReviewForm id={this.props.listing_data.id} addReviewToState={this.addReviewToState}/>}
+                    <><h3>Review: </h3><p>{this.state.review}</p></> : <ReviewForm id={this.props.listing_data.id} addReviewToState={this.addReviewToState}/>}
                     <Button variant='contained' color='primary' onClick={this.props.hide}>HIDE</Button>
                 </div>
             </div>
