@@ -5,6 +5,7 @@ import API from '../API'
 import ResultCard from './ResultCard';
 import './SearchComponent.css';
 import NewListForm from './NewListForm';
+import ResultsSlider from "./ResultsSlider";
 
 class SearchComponent extends React.Component {
 
@@ -60,7 +61,8 @@ class SearchComponent extends React.Component {
           SUBMIT
         </Button>
                 {/* <h2>Search Result</h2> */}
-                {this.state.search_result ? <ResultCard movie={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch}/>
+                {/* {this.state.search_result ? <ResultCard movie={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch}/> */}
+                {this.state.search_result ? <div className="ResultsSliderContainer"><ResultsSlider results={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch}/></div>
                 // <ResultCard movie={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch}/>
                 : null}
             </div>

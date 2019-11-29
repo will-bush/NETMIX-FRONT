@@ -7,7 +7,7 @@ const signInUrl = baseUrl + '/signin'
 const validateUrl = baseUrl + '/validate'
 const ListUrl = baseUrl + '/lists'
 const ListingURL = baseUrl + '/listings'
-const searchURL = "http://www.omdbapi.com/?apikey=a12b58ca&t="
+const searchURL = "http://www.omdbapi.com/?apikey=a12b58ca&s="
 const contentURL = baseUrl + '/contents/'
 const userURL = baseUrl + '/users/'
 const sourcesURL = "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term="
