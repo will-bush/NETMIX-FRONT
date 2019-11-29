@@ -5,7 +5,11 @@ class FeedPage extends React.Component {
     render() {
 
         return (
-            <div>THIS IS THE FEED PAGE</div>
+            <div>
+                <h1>
+                RECENTLY ADDED
+                </h1>
+            </div>
         )
     }
 }

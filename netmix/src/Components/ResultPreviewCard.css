@@ -2,7 +2,22 @@
     height: 200px;
 }
 
-img {
+.resultPreview {
     /* width: auto; */
-    height: 200px;
+    height: 250px;
+    padding-left: 50px;
+    transition: transform .2s;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    /* box-shadow: 2px 2px 10px rgba(0, 0, 0, .5); */
 }
+
+.ResultPreviewCard p{
+    text-align: center;
+    /* box-shadow: 2px 2px 10px rgba(0, 0, 0, .5); */
+}
+
+.resultPreview:hover {
+    transform: scale(1.2);
+  }
+

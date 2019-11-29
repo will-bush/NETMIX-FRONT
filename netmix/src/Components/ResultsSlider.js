@@ -16,16 +16,13 @@ class ResultSlider extends React.Component {
     //   width: 800
     };
     return (
-        <>
-        {/* <h1>{this.props.list_data.list_name}</h1>
-        <p>{this.props.list_data.description}</p> */}
-        {/* <p className="delete" onClick={() => this.props.deleteList(this.props.list_data.id)}>Delete list</p> */}
+      <div className="wrapper">
       <Slider {...settings}>
         {this.props.results && this.props.results.Search.map(listing =>
-            <div><ResultPreviewCard key={listing.id} listing_data={listing} refreshLists={this.props.refreshLists}/></div>
+            <div><ResultPreviewCard key={listing.id} listing_data={listing} refreshLists={this.props.refreshLists} displayResult={this.props.displayResult}/></div>
             )}  
       </Slider>
-      </>
+      </div>
     );
   }
 }

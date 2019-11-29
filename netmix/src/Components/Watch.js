@@ -34,15 +34,16 @@ class Watch extends React.Component {
          this.setState({
              refinedSources: refined[0].locations
          })
+         this.printSources()
      }
 
     printSources = () => {
         console.log("printing the sources")
         let streamable = this.state.refinedSources.filter(source => source.url !== null)
         console.log(streamable)
-        // this.setState({
-        //     streams: streamable
-        // })
+        this.setState({
+            streams: streamable
+        })
     }
 
     render() {
@@ -52,13 +53,11 @@ class Watch extends React.Component {
                 <div class="watch_content">
                     <h1>Watch component</h1>
                     <p>You can currently watch {this.props.movie.Title} on the following sites:</p>
-                    {/* <Button variant='contained' color='primary' onClick={() => this.getSources(this.props.movie.Title)}>GET SOURCES</Button> */}
-                    {/* {this.state.refinedSources.length > 0 ? <p>THIS IS HOW WE MAP!</p> : null}
-                     */}
-                     {this.state.refinedSources.length > 0 ? this.printSources() : null}
-                    {/* <WatchLink /> */}
+                    <Button variant='contained' color='primary' onClick={() => this.getSources(this.props.movie.Title)}>GET SOURCES</Button>
+                     {/* {this.state.refinedSources.length > 0 ? <p>THIS IS HOW WE MAP!</p> : null} */}
+                    {/* {this.state.streams.length > 0 ? this.state.streams.map(stream => <p>{stream.display_name}</p>) : null} */}
+                    {this.state.streams.length > 0 ? this.state.streams.map(stream => <a href={stream.url} target="_blank" rel="noopener noreferrer"><img src={stream.icon} /></a>) : null}
                     <Button variant='contained' color='primary' onClick={this.props.hide}>HIDE</Button>
-        {/* <iframe src="https://www.imdb.com/videoembed/vi1396095257" allowfullscreen width="854" height="400"></iframe> */}
                 </div>
             </div>
         )

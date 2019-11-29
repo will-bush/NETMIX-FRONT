@@ -5,6 +5,17 @@ body {
     text-align: left;
 }
 
+@keyframes expand {
+	from {
+	  transform: scale(0);
+	  opacity: 0;
+	}
+  }
+
+.wrapper {
+	animation: expand .5s ease-in-out;
+}
+
 .main_card {
 	color: #fff;
     width: 760px;

@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import MovieCard from './MovieCard'
+import './Carousel.css';
 
 class SimpleSlider extends React.Component {
   render() {
@@ -14,7 +15,7 @@ class SimpleSlider extends React.Component {
       slidesToScroll: 1
     };
     return (
-        <>
+        <div className="sliderSection">
         <h1>{this.props.list_data.list_name}</h1>
         <p>{this.props.list_data.description}</p>
         {/* <p className="delete" onClick={() => this.props.deleteList(this.props.list_data.id)}>Delete list</p> */}
@@ -23,7 +24,7 @@ class SimpleSlider extends React.Component {
             <div><MovieCard key={listing.id} listing_data={listing} refreshLists={this.props.refreshLists}/></div>
             )}  
       </Slider>
-      </>
+      </div>
     );
   }
 }

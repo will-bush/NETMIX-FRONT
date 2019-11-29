@@ -1,9 +1,11 @@
 .search {
     background-image: url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
     background-repeat: no-repeat;
-    height: 980px;
+    min-height: 980px;
+    height: auto;
     background-position: center;
     background-attachment: fixed;
+    padding-bottom: 50px;
   }
 
   .input {

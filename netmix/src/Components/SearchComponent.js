@@ -11,23 +11,35 @@ class SearchComponent extends React.Component {
 
     state = {
         search_query: '',
-        search_result: null
+        search_result: null,
+        selected_result: null
     }
 
     resetSearch = () => {
         this.setState({
-            search_result: null
+            search_result: null,
+            selected_result: null
         })
     }
+
+        displayResult = (id) => {
+            API.searchByID(id)
+            .then( resp => this.setState({
+                selected_result: resp
+            }))
+        }
+
 
     handleChange = event =>
     this.setState({ [event.target.name]: event.target.value })
 
     handleSubmit = () => {
+        this.resetSearch()
         API.search(this.state.search_query)
           .then(data => {
               this.setState({
                   search_result: data
+                //   selected_result: null
               })
             if (data.error) throw Error(data.error)
           })
@@ -41,7 +53,7 @@ class SearchComponent extends React.Component {
 
         return (
             <div className="search">
-                <h3>Quick Search</h3>
+                <h3>SEARCH</h3>
                 {/* {this.props.lists.length === 0 ? <NewListForm user_id={this.props.user_id} add_list={this.props.add_list} reset={this.resetListForm}/> : null} */}
                 <TextField
                 variant="filled"
@@ -62,9 +74,9 @@ class SearchComponent extends React.Component {
         </Button>
                 {/* <h2>Search Result</h2> */}
                 {/* {this.state.search_result ? <ResultCard movie={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch}/> */}
-                {this.state.search_result ? <div className="ResultsSliderContainer"><ResultsSlider results={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch}/></div>
-                // <ResultCard movie={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch}/>
-                : null}
+                {this.state.selected_result ? <ResultCard movie={this.state.selected_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch}/> : null }
+                {this.state.search_result ? <div className="ResultsSliderContainer"><ResultsSlider results={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch} displayResult={this.displayResult}/></div>
+                : null }
             </div>
         )
     }
