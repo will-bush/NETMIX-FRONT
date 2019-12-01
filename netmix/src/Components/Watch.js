@@ -52,12 +52,14 @@ class Watch extends React.Component {
             <div className="watch">
                 <div class="watch_content">
                     <h1>Watch component</h1>
-                    <p>You can currently watch {this.props.movie.Title} on the following sites:</p>
-                    <Button variant='contained' color='primary' onClick={() => this.getSources(this.props.movie.Title)}>GET SOURCES</Button>
+                    <Button variant='contained' color='secondary' onClick={() => this.getSources(this.props.movie.Title)}>GET SOURCES</Button>
                      {/* {this.state.refinedSources.length > 0 ? <p>THIS IS HOW WE MAP!</p> : null} */}
                     {/* {this.state.streams.length > 0 ? this.state.streams.map(stream => <p>{stream.display_name}</p>) : null} */}
-                    {this.state.streams.length > 0 ? this.state.streams.map(stream => <a href={stream.url} target="_blank" rel="noopener noreferrer"><img src={stream.icon} /></a>) : null}
-                    <Button variant='contained' color='primary' onClick={this.props.hide}>HIDE</Button>
+                    <div className="SourceRow">
+                    {this.state.streams.length > 0 ? <p>You can currently watch {this.props.movie.Title} on the following sites:</p> : null}
+                    {this.state.streams.length > 0 ? this.state.streams.map(stream => <div className="sourceColumn"><a href={stream.url} target="_blank" rel="noopener noreferrer"><img className="sourceIcon" src={stream.icon} /></a></div>) : null}
+                    </div>
+                    <Button className="hide_details" variant='contained' color='primary' onClick={this.props.hide}>HIDE</Button>
                 </div>
             </div>
         )

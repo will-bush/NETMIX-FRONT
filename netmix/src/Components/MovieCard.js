@@ -4,7 +4,8 @@ import './MovieCard.css';
 import Details from './Details';
 import Watch from './Watch';
 import Review from './Review';
-import Remove from './Remove'
+import Remove from './Remove';
+import poster from '../poster.png';
 
 class MovieCard extends React.Component {
 
@@ -69,7 +70,8 @@ class MovieCard extends React.Component {
 		</div>
 		<div className="card_right">
 			<div className="img_container">
-				<img src={this.state.content.Poster} alt=""/>
+			{this.state.content.Poster === "N/A" ? <img src={poster} alt={"Poster for " + this.state.content.Title}/>
+                 : <img src={this.state.content.Poster} alt={"Poster for " + this.state.content.Title}/>}
 				</div>
 				<div className="play_btn">
 					<a href="https://www.imdb.com/title/tt4912910/" target="_blank" rel="noopener noreferrer">

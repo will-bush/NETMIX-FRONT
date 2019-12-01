@@ -34,3 +34,10 @@ ul {
   .bar {
     height: 40px;
   }
+
+  .navLogo {
+    height: 20px;
+    padding: 5px;
+    padding-top: 12px;
+    padding-left: 12px;
+  }

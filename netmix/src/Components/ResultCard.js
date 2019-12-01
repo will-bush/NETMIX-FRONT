@@ -6,6 +6,7 @@ import Watch from './Watch';
 import Add from './Add'
 // import Review from './Review';
 // import Remove from './Remove'
+import poster from '../poster.png'
 
 class ResultCard extends React.Component {
 
@@ -62,7 +63,8 @@ class ResultCard extends React.Component {
 		<div class="card_right">
 			<div class="img_container">
 				{/* <img src={"http://img.omdbapi.com/?apikey=a12b58ca&i=" + this.props.movie.imdbID} alt=""/> */}
-                <img src={this.props.movie.Poster} alt={"Poster for " + this.props.movie.Title}/>
+				{this.props.movie.Poster === "N/A" ? <img src={poster} alt={"Poster for " + this.props.movie.Title}/>
+                 : <img src={this.props.movie.Poster} alt={"Poster for " + this.props.movie.Title}/>}
 				</div>
 				<div class="play_btn">
 					<a href="https://www.imdb.com/title/tt4912910/" target="_blank" rel="noopener noreferrer">

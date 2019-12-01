@@ -1,5 +1,6 @@
 import React from 'react';
 import './ResultPreviewCard.css';
+import poster from '../poster.png'
 
 class ResultPreviewCard extends React.Component {
 
@@ -8,6 +9,8 @@ class ResultPreviewCard extends React.Component {
         return (
             <div className="ResultPreviewCard" onClick={() => this.props.displayResult(this.props.listing_data.imdbID)}>
                 {this.props.listing_data.Poster !== "N/A" ? <p><img className="resultPreview" src={this.props.listing_data.Poster} />
+                <b>{this.props.listing_data.Title}</b></p> : null}
+                {this.props.listing_data.Poster === "N/A" ? <p><img className="resultPreview" src={poster} />
                 <b>{this.props.listing_data.Title}</b></p> : null}
             </div>
         )

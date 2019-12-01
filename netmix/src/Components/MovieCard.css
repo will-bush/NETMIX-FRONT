@@ -42,6 +42,7 @@ body {
 .card_right img {
 	height: 390px;
 	border-radius: 2px;
+	max-width: 270px;
 }
 .card_right {
 	border-radius: 2px;

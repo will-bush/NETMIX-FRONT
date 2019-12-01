@@ -54,6 +54,8 @@ body {
 .card_right img {
 	height: 390px;
 	border-radius: 2px;
+	max-width: 270px;
+
 }
 .card_right {
 	border-radius: 2px;
@@ -117,26 +119,26 @@ button:hover {
 	    -ms-transform: scale(1.1);
 	        transform: scale(1.1);
 }
-.play_btn {
+/* .play_btn {
 	height: 100%;
 	margin: -394px auto;
 	position: relative;
 	text-align: center;
 	/* background: rgba(0, 244, 170,0.4); */
-	box-shadow: 0 0 50px rgba(0,0,0,0.2);
-}
-.fa-play-circle {
+	/* box-shadow: 0 0 50px rgba(0,0,0,0.2); */
+/* } */
+/* .fa-play-circle {
 	color: #255;
 	font-size: 160px;
 	margin-top: 110px;
 	-webkit-animation: bounce 1.0s -0.4s infinite;
 	        animation: bounce 1.0s -0.4s infinite;
-}
+} */
 
-.fa-play-circle:hover {
+/* .fa-play-circle:hover {
 	color: aqua;
 	animation: bounce 0.4s infinite;
-}
+} */ */
 @-webkit-keyframes bounce {
   8% {
     transform: scale(0.3);

@@ -6,6 +6,7 @@ import ResultCard from './ResultCard';
 import './SearchComponent.css';
 import NewListForm from './NewListForm';
 import ResultsSlider from "./ResultsSlider";
+import logo from '../netmix_logo.png'
 
 class SearchComponent extends React.Component {
 
@@ -39,7 +40,6 @@ class SearchComponent extends React.Component {
           .then(data => {
               this.setState({
                   search_result: data
-                //   selected_result: null
               })
             if (data.error) throw Error(data.error)
           })
@@ -53,7 +53,7 @@ class SearchComponent extends React.Component {
 
         return (
             <div className="search">
-                <h3>SEARCH</h3>
+                <img className="logo" src={logo} alt='logo' />
                 {/* {this.props.lists.length === 0 ? <NewListForm user_id={this.props.user_id} add_list={this.props.add_list} reset={this.resetListForm}/> : null} */}
                 <TextField
                 variant="filled"
@@ -72,11 +72,11 @@ class SearchComponent extends React.Component {
         <Button onClick={this.handleSubmit} variant='contained' color='secondary'>
           SUBMIT
         </Button>
-                {/* <h2>Search Result</h2> */}
-                {/* {this.state.search_result ? <ResultCard movie={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch}/> */}
                 {this.state.selected_result ? <ResultCard movie={this.state.selected_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch}/> : null }
-                {this.state.search_result ? <div className="ResultsSliderContainer"><ResultsSlider results={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch} displayResult={this.displayResult}/></div>
+                {this.state.search_result && this.state.search_result.Response === "True" && this.state.search_result.Search.length > 1 ? <div className="ResultsSliderContainer"><ResultsSlider results={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch} displayResult={this.displayResult}/></div>
                 : null }
+                {this.state.search_result && this.state.search_result.Response === "True" && this.state.search_result.Search.length === 1 ? this.displayResult(this.state.search_result.Search[0].imdbID) : null}
+                {this.state.search_result && this.state.search_result.Response === "False" ? <h1>SORRY WE COUDLN'T FIND THAT MOVIE!</h1> : null}
             </div>
         )
     }

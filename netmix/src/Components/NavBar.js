@@ -1,5 +1,6 @@
 import React from 'react';
 import './NavBar.css';
+import logo from '../netmix_logo.png'
 
 class NavBar extends React.Component {
 
@@ -8,8 +9,8 @@ class NavBar extends React.Component {
         return (
             <div className="bar">
                 <ul className="navbar">
-                    <li><p onClick={() => this.props.setPage("")}>HOME</p></li>
-                    {/* <li><p onClick={() => this.props.setPage("search")}>ADVANCED SEARCH</p></li> */}
+                <li><img className="navLogo" src={logo} alt='logo' onClick={() => this.props.setPage("")}/></li>
+                    {/* <li><p onClick={() => this.props.setPage("")}>HOME</p></li> */}
                     <li><p onClick={() => this.props.setPage("lists")}>MY LISTS</p></li>
                     <li><p onClick={() => this.props.setPage("feed")}>RECENTLY ADDED</p></li>
                     <li><p onClick={() => this.props.setPage("following")}>FOLLOWING</p></li>

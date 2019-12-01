@@ -32,3 +32,33 @@
 .watch_content  h1 {
     font-size: 30px;
 }
+
+.source a {
+	/* display: block;
+	margin: 40px; */
+}
+
+.sourceColumn {
+	float: left;
+	width: auto;
+	padding: 5px 25px;
+  }
+  
+  /* Clear floats after image containers */
+  .sourceRow::after {
+	content: "";
+	clear: both;
+	display: table;
+  }
+
+  .sourceIcon {
+	transition: transform .2s;
+	padding: 5px;
+	border-radius: 5px;
+	
+  }
+
+  .sourceIcon:hover {
+	transform: scale(1.2);
+	background-color: #e60a14;
+  }
