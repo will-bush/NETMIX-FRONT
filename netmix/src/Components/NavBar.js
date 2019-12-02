@@ -1,6 +1,6 @@
 import React from 'react';
 import './NavBar.css';
-import logo from '../netmix_logo.png'
+import logo from '../netmix.png'
 
 class NavBar extends React.Component {
 
@@ -11,10 +11,10 @@ class NavBar extends React.Component {
                 <ul className="navbar">
                 <li><img className="navLogo" src={logo} alt='logo' onClick={() => this.props.setPage("")}/></li>
                     {/* <li><p onClick={() => this.props.setPage("")}>HOME</p></li> */}
-                    <li><p onClick={() => this.props.setPage("lists")}>MY LISTS</p></li>
-                    <li><p onClick={() => this.props.setPage("feed")}>RECENTLY ADDED</p></li>
-                    <li><p onClick={() => this.props.setPage("following")}>FOLLOWING</p></li>
-                    <li className="signout" ><p onClick={() => this.props.signOut()}>SIGN OUT</p></li>
+                    <li><p onClick={() => this.props.setPage("lists")}>My List</p></li>
+                    <li><p onClick={() => this.props.setPage("feed")}>Recently Added</p></li>
+                    <li><p onClick={() => this.props.setPage("connect")}>Connect</p></li>
+                    <li className="signout" ><p onClick={() => this.props.signOut()}>Sign Out</p></li>
                 </ul>
             </div>
         )

@@ -2,7 +2,7 @@ import React from 'react';
 import SearchComponent from './SearchComponent';
 import ListContainer from './ListContainer';
 import ListsPage from './ListsPage';
-import SearchPage from './SearchPage';
+import Connect from './Connect';
 import FeedPage from './FeedPage';
 // import { Route, withRouter, Switch } from 'react-router-dom';
 import API from '../API'
@@ -77,7 +77,7 @@ class Home extends React.Component {
                 <ListContainer user_id={this.props.user_id} lists={this.state.lists} add_list={this.addListToUser} refreshLists={this.refreshLists} deleteList={this.deleteList} scrollToNewList={this.scrollToNewList}/> </>: null}
                 {this.state.page === "lists" ? <ListsPage lists={this.state.lists} refreshLists={this.refreshLists} deleteList={this.deleteList}/> : null}
                 {this.state.page === "feed" ? <FeedPage /> : null}
-                {this.state.page === "search" ? <SearchPage /> : null}
+                {this.state.page === "connect" ? <Connect /> : null}
             </div>
         )
     }

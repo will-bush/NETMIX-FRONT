@@ -12,6 +12,7 @@ const idURL = "http://www.omdbapi.com/?apikey=a12b58ca&i="
 const contentURL = baseUrl + '/contents/'
 const userURL = baseUrl + '/users/'
 const sourcesURL = "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term="
+const findUserURL = baseUrl + '/find/'
 
 const get = url =>
   fetch(url, {
@@ -48,6 +49,8 @@ const addMovieToDB = (movie) => post (contentURL, movie)
 const getContent = (id) => get(contentURL + id)
 
 const createList = (ListData) => post (ListUrl, ListData)
+
+const getAllUsers = () => get(userURL)
 
 const addMovieToList = (ListID, MovieID ) =>
   fetch(ListingURL, {
@@ -110,5 +113,6 @@ export default {
   deleteLIST,
   getSources,
   postReview,
-  searchByID
+  searchByID,
+  getAllUsers
 }

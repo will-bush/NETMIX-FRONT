@@ -1,0 +1,19 @@
+h1 {
+    color: white;
+    margin: 0px;
+    padding-bottom: 20px;
+}
+
+.connectContainer {
+    /* background-color: #1c1e21; */
+    background-image: linear-gradient(to right, #060607, rgb(66, 66, 66), #060607);
+    padding: 20px;
+    min-height: 980px;
+    height: auto;
+}
+
+.connectSliderContainer {
+    width: 80%;
+    margin-left: 140px;
+    margin-top: 20px;
+  }

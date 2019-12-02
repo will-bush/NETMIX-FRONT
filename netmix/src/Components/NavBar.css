@@ -18,13 +18,21 @@ ul {
     text-align: center;
     padding: 0px 15px;
     text-decoration: none;
-    margin-top: 12px;
-    font-family: Helvetica, sans-serif;
-    font-weight: 400;
+    margin-top: 18px;
+    font-family: Roboto;
+    font-weight: 200;
+    transition: transform .4s;
+  }
+
+  li p:hover {
+    color: #e60a14;
+    transform: scale(1.2);
+    font-weight: 300;
   }
   
   li a:hover {
     background-color: #111;
+    color: #e60a14;
   }
 
   .signout {
@@ -36,8 +44,9 @@ ul {
   }
 
   .navLogo {
-    height: 20px;
+    height: 35px;
     padding: 5px;
     padding-top: 12px;
-    padding-left: 12px;
+    padding-left: 50px;
+    padding-right: 40px;
   }

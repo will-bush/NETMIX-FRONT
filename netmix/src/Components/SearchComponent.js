@@ -6,7 +6,7 @@ import ResultCard from './ResultCard';
 import './SearchComponent.css';
 import NewListForm from './NewListForm';
 import ResultsSlider from "./ResultsSlider";
-import logo from '../netmix_logo.png'
+import logo from '../netmix.png'
 
 class SearchComponent extends React.Component {
 
