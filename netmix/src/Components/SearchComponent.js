@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button'
 import API from '../API'
 import ResultCard from './ResultCard';
 import './SearchComponent.css';
-import NewListForm from './NewListForm';
+// import NewListForm from './NewListForm';
 import ResultsSlider from "./ResultsSlider";
 import logo from '../netmix.png'
 
@@ -15,6 +15,10 @@ class SearchComponent extends React.Component {
         search_result: null,
         selected_result: null
     }
+
+    componentDidMount() {
+        window.scrollTo(0, 0)
+      }
 
     resetSearch = () => {
         this.setState({
@@ -76,7 +80,7 @@ class SearchComponent extends React.Component {
                 {this.state.search_result && this.state.search_result.Response === "True" && this.state.search_result.Search.length > 1 ? <div className="ResultsSliderContainer"><ResultsSlider results={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch} displayResult={this.displayResult}/></div>
                 : null }
                 {this.state.search_result && this.state.search_result.Response === "True" && this.state.search_result.Search.length === 1 ? this.displayResult(this.state.search_result.Search[0].imdbID) : null}
-                {this.state.search_result && this.state.search_result.Response === "False" ? <h1>SORRY WE COUDLN'T FIND THAT MOVIE!</h1> : null}
+                {this.state.search_result && this.state.search_result.Response === "False" ? <h3>Sorry - we couldn't find anything for that search term.<br/><br/>Please try again.</h3> : null}
             </div>
         )
     }

@@ -3,7 +3,7 @@ import API from "../API"
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
+// import Link from '@material-ui/core/Link';
 // import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
@@ -23,20 +23,20 @@ export class SignUpForm extends Component {
 
   render() {
 
-    function Copyright() {
-        return (
-          <div className="copyright">
-          <Typography variant="body2" color="textSecondary" align="center">
-            {'Copyright © '}
-            <Link color="inherit" href="https://material-ui.com/">
-              NETMIX
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-          </Typography>
-          </div>
-        );
-      }
+    // function Copyright() {
+    //     return (
+    //       <div className="copyright">
+    //       <Typography variant="body2" color="textSecondary" align="center">
+    //         {'Copyright © '}
+    //         <Link color="inherit" href="https://material-ui.com/">
+    //           NETMIX
+    //         </Link>{' '}
+    //         {new Date().getFullYear()}
+    //         {'.'}
+    //       </Typography>
+    //       </div>
+    //     );
+    //   }
 
     return (
       <div className="background">

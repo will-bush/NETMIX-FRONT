@@ -12,7 +12,7 @@ const idURL = "http://www.omdbapi.com/?apikey=a12b58ca&i="
 const contentURL = baseUrl + '/contents/'
 const userURL = baseUrl + '/users/'
 const sourcesURL = "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term="
-const findUserURL = baseUrl + '/find/'
+// const findUserURL = baseUrl + '/find/'
 
 const get = url =>
   fetch(url, {

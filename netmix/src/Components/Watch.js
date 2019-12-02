@@ -57,7 +57,7 @@ class Watch extends React.Component {
                     {/* {this.state.streams.length > 0 ? this.state.streams.map(stream => <p>{stream.display_name}</p>) : null} */}
                     <div className="SourceRow">
                     {this.state.streams.length > 0 ? <p>You can currently watch {this.props.movie.Title} on the following sites:</p> : null}
-                    {this.state.streams.length > 0 ? this.state.streams.map(stream => <div className="sourceColumn"><a href={stream.url} target="_blank" rel="noopener noreferrer"><img className="sourceIcon" src={stream.icon} /></a></div>) : null}
+                    {this.state.streams.length > 0 ? this.state.streams.map(stream => <div className="sourceColumn"><a href={stream.url} target="_blank" rel="noopener noreferrer"><img className="sourceIcon" src={stream.icon} alt={stream.name}/></a></div>) : null}
                     </div>
                     <Button className="hide_details" variant='contained' color='primary' onClick={this.props.hide}>HIDE</Button>
                 </div>

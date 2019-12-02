@@ -19,22 +19,11 @@ class Connect extends React.Component {
         .then(resp => this.setState({
             users: resp
         }))
+        window.scrollTo(0, 0)
     }
 
     handleChange = event =>
     this.setState({ [event.target.name]: event.target.value })
-
-    // handleSubmit = () => {
-    //     this.resetSearch()
-    //     API.getUserByName(this.state.search_query)
-    //       .then(data => {
-    //           this.setState({
-    //               search_result: data
-    //           })
-    //         if (data.error) throw Error(data.error)
-    //       })
-    //       .catch(error => console.log(error))
-    //   }
 
     handleSubmit = () => {
         const results = this.state.users.filter(user => user.username === this.state.search_query);
@@ -68,7 +57,7 @@ class Connect extends React.Component {
         <Button onClick={this.handleSubmit} variant='contained' color='secondary'>
           SUBMIT
         </Button>
-                {this.state.search_result && this.state.search_result.length !== 0 ? <UserDisplayComponent user={this.state.search_result[0]} /> : null }
+                {this.state.search_result && this.state.search_result.length !== 0 ? <UserDisplayComponent user={this.state.search_result[0]} user_id={this.props.user_id}/> : null }
                 {this.state.search_result && this.state.search_result.length === 0 ? <h1>Sorry, we could find a user called {this.state.search_query}!</h1> : null }
             </div>
         )

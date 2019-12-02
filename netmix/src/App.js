@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, withRouter, Switch } from 'react-router-dom'
 
-import Header from './Components/Header'
+// import Header from './Components/Header'
 import SignInForm from './Components/SignInForm'
 import SignUpForm from './Components/SignUpForm'
 import Home from './Components/Home'

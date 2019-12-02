@@ -54,8 +54,6 @@ class Home extends React.Component {
     deleteList = (listID) => {
         API.deleteLIST(listID)
         this.retrieve()
-        // THIS NEEDS IMPORVING SO THAT THE FUNCTIONS MAPS OVER THE LISTS LISTINGS AND DELETES THEM INDIVIDUALLY, BEFORE THEN DELETING THE LIST ITSELF.
-        // CURRENT FUNCTIONALITY ONLY ALLOWS FOR AN EMPTY LIST TO BE DELETED
     }
 
     retrieve = () => {
@@ -77,7 +75,7 @@ class Home extends React.Component {
                 <ListContainer user_id={this.props.user_id} lists={this.state.lists} add_list={this.addListToUser} refreshLists={this.refreshLists} deleteList={this.deleteList} scrollToNewList={this.scrollToNewList}/> </>: null}
                 {this.state.page === "lists" ? <ListsPage lists={this.state.lists} refreshLists={this.refreshLists} deleteList={this.deleteList}/> : null}
                 {this.state.page === "feed" ? <FeedPage /> : null}
-                {this.state.page === "connect" ? <Connect /> : null}
+                {this.state.page === "connect" ? <Connect user_id={this.props.user_id}/> : null}
             </div>
         )
     }
