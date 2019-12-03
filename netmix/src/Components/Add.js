@@ -24,6 +24,7 @@ class Add extends React.Component {
         .then(() => this.props.refreshLists())
         .then(this.props.hide())
         .then(this.props.resetSearch())
+        window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
         // .then(res => this.props.showMovieOnList(listID, res.content))
         // .then(this.props.refreshData())
         // .then(res => console.log(res))

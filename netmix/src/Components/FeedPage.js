@@ -12,9 +12,10 @@ class FeedPage extends React.Component {
     }
 
     componentDidMount() {
-        API.getLists()
+        API.getUser(24)
+        // .then(resp => console.log(resp.lists))
         .then(resp => this.setState({
-            lists: resp
+            lists: resp.lists
         }))
         window.scrollTo(0, 0)
     }
@@ -23,8 +24,8 @@ class FeedPage extends React.Component {
 
         return (
             <div className="feedPageContainer">
-                <h1>
-                RECENTLY ADDED
+                <h1 className="blackHeader">
+                Get inspired by some of our favourite lists...
                 </h1>
                 <RecentlyAdded user_id={this.props.user_id} lists={this.state.lists} add_list={this.addListToUser} refreshLists={this.refreshLists} deleteList={this.deleteList} scrollToNewList={this.scrollToNewList}/>
             </div>

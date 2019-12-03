@@ -6,6 +6,7 @@ ul {
     background-color: #060607;
     position: fixed;
     width: 100%;
+    z-index: 9999;
   }
   
   li {

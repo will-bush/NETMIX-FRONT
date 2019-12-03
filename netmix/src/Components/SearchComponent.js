@@ -32,6 +32,7 @@ class SearchComponent extends React.Component {
             .then( resp => this.setState({
                 selected_result: resp
             }))
+            window.scrollTo(0, 300)
         }
 
 
@@ -56,7 +57,7 @@ class SearchComponent extends React.Component {
         const { handleChange } = this
 
         return (
-            <div className="search">
+            <div className="search" id="search">
                 <img className="logo" src={logo} alt='logo' />
                 {/* {this.props.lists.length === 0 ? <NewListForm user_id={this.props.user_id} add_list={this.props.add_list} reset={this.resetListForm}/> : null} */}
                 <TextField

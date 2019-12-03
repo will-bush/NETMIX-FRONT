@@ -21,7 +21,8 @@ class ListContainer extends React.Component {
     render() {
 
         return (
-            <div className="listContainer">
+            <div className="listContainer" id="yourlists">
+                <div className="blackHeader">
                 <h1>Your Lists</h1>
                 <Button
                 variant='contained'
@@ -36,6 +37,7 @@ class ListContainer extends React.Component {
                 this.props.lists.map(list =>
                 <ListComponent id={list.id }key={list.id }list_data={list} refreshLists={this.props.refreshLists} deleteList={this.props.deleteList}/>)
                 : null} */}
+                </div>
                 {this.props.lists ?
                 this.props.lists.map(list =>
                 <div className="ListSliderContainer" key={list.id} href={list.id}>

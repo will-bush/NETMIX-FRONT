@@ -6,12 +6,13 @@ h1 {
 
 .listContainer {
     /* background-color: #1c1e21; */
+    width: 100%;
     background-image: linear-gradient(to right, #060607, rgb(66, 66, 66), #060607);
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .ListSliderContainer {
-    width: 80%;
-    margin-left: 140px;
+    width: 100%;
+    /* margin-left: 140px; */
     margin-top: 20px;
   }

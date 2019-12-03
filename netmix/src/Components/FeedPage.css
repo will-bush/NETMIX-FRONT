@@ -10,7 +10,13 @@
 .feedPageContainer {
     /* background-color: #1c1e21; */
     background-image: linear-gradient(to right, #060607, rgb(66, 66, 66), #060607);
-    padding: 20px;
+    /* padding: 20px; */
     min-height: 980px;
     height: auto;
+}
+
+.blackHeader {
+    background-color: black;
+    width: auto;
+    padding: 50px;
 }

@@ -32,7 +32,7 @@ class NewListForm extends React.Component {
     const { handleChange, handleSubmit } = this
 
     return (
-      <div>
+      <div href="newList">
         <TextField
           variant="filled"
           className="input"

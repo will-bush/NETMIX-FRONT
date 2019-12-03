@@ -2,6 +2,10 @@ body {
   /* background-color: #212121; */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .App {
   text-align: center;
 }
@@ -22,5 +26,21 @@ body {
 }
 
 .App-link {
-  color: #09d3ac;
+  color: #e60a14;
+}
+
+.slick-prev:before {
+  color: #e60a14;
+  font-size: 50px;
+  /* opacity: 1; */
+  margin-right: 50px;
+}
+
+.slick-next:before {
+  color: #e60a14;
+  font-size: 50px;
+}
+
+div.wrapper {
+  margin-left: 50px;
 }

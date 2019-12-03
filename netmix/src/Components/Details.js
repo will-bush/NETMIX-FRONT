@@ -22,7 +22,7 @@ class Details extends React.Component {
                         <p><strong>Actors : </strong> {this.props.movie.Actors}</p>
                         {/* <p>Plot: {this.props.movie.Plot}</p> */}
                         <p><strong>Language : </strong> {this.props.movie.Language}</p>
-                        <p><strong>Country : </strong> {this.props.movie.Country}</p>
+                        {/* <p><strong>Country : </strong> {this.props.movie.Country}</p> */}
                         <Button variant='contained' color='secondary' href={"https://www.imdb.com/title/" + this.props.movie.imdbID} target="_blank" rel="noopener noreferrer">View on IMDB</Button>
 
                         {/* <p>Awards: {this.props.movie.Awards}</p> */}
@@ -38,7 +38,7 @@ class Details extends React.Component {
                         <p><strong>Production :</strong> {this.props.movie.Production}</p>
                         {/* <p>Website: {this.props.movie.Website}</p> */}
                         {/* <p>Total Seasons: {this.props.movie.totalSeasons}</p> */}
-                        <p><strong>Ratings :</strong> {this.props.movie.Ratings.length}</p>
+                        {/* <p><strong>Ratings :</strong> {this.props.movie.Ratings.length}</p> */}
                         {/* <a href={"https://www.imdb.com/title/" + this.props.movie.imdbID} target="_blank" rel="noopener noreferrer">View on IMDb</a> */}
 
                         </div>

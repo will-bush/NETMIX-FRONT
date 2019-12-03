@@ -128,6 +128,7 @@ export class SignUpForm extends Component {
         >Sign up</Button>
         : 
         <Button
+            type="submit"
             onClick={this.signUp}
             fullWidth
             variant="contained"
