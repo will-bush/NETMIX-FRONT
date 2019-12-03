@@ -12,6 +12,10 @@ class ListPage extends React.Component {
 
     componentDidMount() {
         window.scrollTo(0, 0)
+        this.setState({
+            selected_list: this.props.lists[0]
+        })
+        // this.setList(this.props.lists[0].list_name)
       }
 
     setList = (list) => {

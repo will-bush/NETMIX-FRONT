@@ -5,6 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import API from '../API'
+import logo from '../netmix.png'
 
 class SignInForm extends React.Component {
   state = {
@@ -34,7 +35,7 @@ class SignInForm extends React.Component {
 
     return (
       <div className="background">
-        <div className="spacer"></div>
+        <img className="logo" src={logo} alt='logo' />
         <Container className="contain" component="main" maxWidth="xs">
       <CssBaseline />
       <div>
