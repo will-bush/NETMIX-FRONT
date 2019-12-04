@@ -74,7 +74,7 @@ class Home extends React.Component {
                 {this.state.page === "" ? <><SearchComponent user_id={this.props.user_id} lists={this.state.lists} refreshLists={this.refreshLists} add_list={this.addListToUser}/>
                 <ListContainer user_id={this.props.user_id} lists={this.state.lists} add_list={this.addListToUser} refreshLists={this.refreshLists} deleteList={this.deleteList} scrollToNewList={this.scrollToNewList}/> </>: null}
                 {this.state.page === "lists" ? <ListsPage lists={this.state.lists} refreshLists={this.refreshLists} deleteList={this.deleteList}/> : null}
-                {this.state.page === "feed" ? <FeedPage /> : null}
+                {this.state.page === "feed" ? <FeedPage lists={this.state.lists} refreshLists={this.refreshLists} deleteList={this.deleteList}/> : null}
                 {this.state.page === "connect" ? <Connect user_id={this.props.user_id}/> : null}
             </div>
         )

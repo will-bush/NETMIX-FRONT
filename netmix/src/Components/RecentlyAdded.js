@@ -36,10 +36,10 @@ class RecentlyAdded extends React.Component {
                 this.props.lists.map(list =>
                 <ListComponent id={list.id }key={list.id }list_data={list} refreshLists={this.props.refreshLists} deleteList={this.props.deleteList}/>)
                 : null} */}
-                {this.props.lists ?
-                this.props.lists.map(list =>
+                {this.props.netmix_lists ?
+                this.props.netmix_lists.map(list =>
                 <div className="ListSliderContainer">
-                <RecentSlider id={list.id } key={list.id } list_data={list} refreshLists={this.props.refreshLists} deleteList={this.props.deleteList}/></div>)
+                <RecentSlider id={list.id } key={list.id } list_data={list} refreshLists={this.props.refreshLists} deleteList={this.props.deleteList} lists={this.props.lists}/></div>)
                 : null}
             </div>
         )

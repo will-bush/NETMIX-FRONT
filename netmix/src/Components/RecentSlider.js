@@ -21,7 +21,7 @@ class RecentSlider extends React.Component {
         {/* <p className="delete" onClick={() => this.props.deleteList(this.props.list_data.id)}>Delete list</p> */}
       <Slider {...settings}>
         {this.props.list_data.listings && this.props.list_data.listings.map(listing =>
-            <div><ShowCard key={listing.id} listing_data={listing} refreshLists={this.props.refreshLists}/></div>
+            <div><ShowCard key={listing.id} listing_data={listing} refreshLists={this.props.refreshLists} lists={this.props.lists}/></div>
             )}  
       </Slider>
       </div>

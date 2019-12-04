@@ -21,7 +21,7 @@ class ListComponent extends React.Component {
             <MovieCard key={listing.id} listing_data={listing} refreshLists={this.props.refreshLists}/>
             )}    */}
             {this.props.list_data.listings && this.props.list_data.listings.length !== 0 ? this.props.list_data.listings.map(listing =>
-            <MovieCard key={listing.id} listing_data={listing} refreshLists={this.props.refreshLists}/>
+            <MovieCard key={listing.id} listing_data={listing} refreshLists={this.props.refreshLists} lists={this.props.lists}/>
             ) : <EmptyCard/>}
         </div>
     

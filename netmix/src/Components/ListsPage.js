@@ -44,7 +44,7 @@ class ListPage extends React.Component {
                 </div>
                 </div>
                 {/* <h1>THIS AREA SHOULD DISPLAY EACH INDIVIDUAL ITEM FROM A SELECTED LIST, IN LIST FORMAT</h1> */}
-                {this.state.selected_list ? <ListComponent id={this.state.selected_list.id } key={this.state.selected_listid } list_data={this.state.selected_list} refreshLists={this.props.refreshLists} deleteList={this.props.deleteList} resetSelected={this.resetSelected}/> : null }
+                {this.state.selected_list ? <ListComponent lists={this.props.lists} id={this.state.selected_list.id } key={this.state.selected_list.id } list_data={this.state.selected_list} refreshLists={this.props.refreshLists} deleteList={this.props.deleteList} resetSelected={this.resetSelected}/> : null }
             </div>
         )
     }

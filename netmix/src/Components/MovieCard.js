@@ -6,6 +6,7 @@ import Watch from './Watch';
 import Review from './Review';
 import Remove from './Remove';
 import poster from '../poster.png';
+import AddExisting from './AddExisting'
 
 class MovieCard extends React.Component {
 
@@ -65,6 +66,10 @@ class MovieCard extends React.Component {
 				<button onClick={() => this.setState({view: "remove"})}>
 					<i className="fas fa-star"></i>REMOVE
 				</button>
+				{/* <!--ADD TO LIST --> */}
+				<button onClick={() => this.setState({view: "add"})}>
+					<i class="fas fa-thumbs-up"></i> ADD TO LIST
+				</button>
 			</div>	
 			</div>
 		</div>
@@ -84,6 +89,7 @@ class MovieCard extends React.Component {
         {this.state.view === "watch" ? <Watch movie={this.state.content} hide={this.hideExpandedView}/> : null}
         {this.state.view === "review" ? <Review movie={this.state.content} hide={this.hideExpandedView} listing_data={this.props.listing_data}/> : null}
         {this.state.view === "remove" ? <Remove movie={this.state.content} hide={this.hideExpandedView} listing_data={this.props.listing_data} refreshLists={this.props.refreshLists}/> : null}
+		{this.state.view === "add" ? <AddExisting movie={this.state.content} hide={this.hideExpandedView} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.props.resetSearch}/> : null}
 	</div>
 // </div>
         )

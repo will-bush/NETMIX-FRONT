@@ -8,14 +8,14 @@ class FeedPage extends React.Component {
 
     state = {
         view: "list",
-        lists: null
+        netmix_lists: null
     }
 
     componentDidMount() {
         API.getUser(24)
         // .then(resp => console.log(resp.lists))
         .then(resp => this.setState({
-            lists: resp.lists
+            netmix_lists: resp.lists
         }))
         window.scrollTo(0, 0)
     }
@@ -27,7 +27,7 @@ class FeedPage extends React.Component {
                 <h1 className="blackHeader">
                 Get inspired by some of our favourite lists...
                 </h1>
-                <RecentlyAdded user_id={this.props.user_id} lists={this.state.lists} add_list={this.addListToUser} refreshLists={this.refreshLists} deleteList={this.deleteList} scrollToNewList={this.scrollToNewList}/>
+                <RecentlyAdded user_id={this.props.user_id} lists={this.props.lists} netmix_lists={this.state.netmix_lists} refreshLists={this.props.refreshLists}/>
             </div>
         )
     }

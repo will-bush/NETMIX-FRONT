@@ -41,7 +41,7 @@ class ListContainer extends React.Component {
                 {this.props.lists ?
                 this.props.lists.map(list =>
                 <div className="ListSliderContainer" key={list.id} href={list.id}>
-                <SimpleSlider id={list.id } key={list.id } list_data={list} refreshLists={this.props.refreshLists} deleteList={this.props.deleteList}/></div>)
+                <SimpleSlider id={list.id } key={list.id } lists={this.props.lists} list_data={list} refreshLists={this.props.refreshLists} deleteList={this.props.deleteList}/></div>)
                 : null}
             </div>
         )
