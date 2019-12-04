@@ -15,7 +15,7 @@ class NavBar extends React.Component {
                     <a href="#yourlists"><li><p>Create New List</p></li></a>
                     <li><p onClick={() => this.props.setPage("feed")}>Get Inspired</p></li>
                     <li><p onClick={() => this.props.setPage("connect")}>Connect</p></li>
-                    <li><p onClick={() => this.props.setPage("")}>Following</p></li>
+                    <li><p onClick={() => this.props.setPage("following")}>Following</p></li>
                     <li className="signout" ><p onClick={() => this.props.signOut()}>Sign Out</p></li>
                 </ul>
             </div>

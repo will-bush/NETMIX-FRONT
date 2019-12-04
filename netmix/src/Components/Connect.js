@@ -59,7 +59,7 @@ class Connect extends React.Component {
           SUBMIT
         </Button>
         </div>
-                {this.state.search_result && this.state.search_result.length !== 0 ? <UserDisplayComponent user={this.state.search_result[0]} user_id={this.props.user_id}/> : null }
+                {this.state.search_result && this.state.search_result.length !== 0 ? <UserDisplayComponent user={this.state.search_result[0]} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists}/> : null }
                 {this.state.search_result && this.state.search_result.length === 0 ? <h1>Sorry, we could find a user called {this.state.search_query}!</h1> : null }
             </div>
         )

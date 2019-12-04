@@ -2,7 +2,7 @@ import React from 'react';
 // import API from '../API';
 // import Button from '@material-ui/core/Button';
 // import ListComponent from './ListComponent';
-import NewlistForm from './NewListForm';
+// import NewlistForm from './NewListForm';
 import './ListContainer.css';
 import RecentSlider from "./RecentSlider";
 

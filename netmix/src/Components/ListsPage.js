@@ -40,7 +40,7 @@ class ListPage extends React.Component {
                 <h1>Select a list</h1>
                 {/* <ListShowCard /> */}<div className="listBox">
                 {/* {this.props.lists.map(list => <p className="listItems" onClick={() => this.setList(list)}>{list.list_name} - </p>)} */}
-                {this.props.lists.map(list => <div className="listItems"><Button variant='contained' color='secondary' onClick={() => this.setList(list)}>{list.list_name}</Button></div>)} 
+                {this.props.lists.map(list => <div key={list.id} className="listItems"><Button variant='contained' color='secondary' onClick={() => this.setList(list)}>{list.list_name}</Button></div>)} 
                 </div>
                 </div>
                 {/* <h1>THIS AREA SHOULD DISPLAY EACH INDIVIDUAL ITEM FROM A SELECTED LIST, IN LIST FORMAT</h1> */}

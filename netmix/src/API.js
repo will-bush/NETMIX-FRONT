@@ -12,6 +12,8 @@ const idURL = "http://www.omdbapi.com/?apikey=a12b58ca&i="
 const contentURL = baseUrl + '/contents/'
 const userURL = baseUrl + '/users/'
 const sourcesURL = "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term="
+const followUserURL = baseUrl + '/user_follows'
+const followListURL = baseUrl + '/list_follows'
 // const findUserURL = baseUrl + '/find/'
 
 const get = url =>
@@ -98,6 +100,32 @@ fetch(ListingURL + '/' + listingID, {
   })
 }).then(resp => resp.json())
 
+const followUser = (profileToFollowID, userID) => 
+fetch(followUserURL, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ user_follow: {
+    following_id: profileToFollowID,
+    user_id: userID
+  }
+  })
+}).then(resp => resp.json())
+
+const followList = (listToFollowID, userID) => 
+fetch(followListURL, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ list_follow: {
+    list_id: listToFollowID,
+    user_id: userID
+  }
+  })
+}).then(resp => resp.json())
+
 export default {
   signIn,
   validate,
@@ -114,5 +142,7 @@ export default {
   getSources,
   postReview,
   searchByID,
-  getAllUsers
+  getAllUsers,
+  followUser,
+  followList
 }

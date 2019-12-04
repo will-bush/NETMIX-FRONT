@@ -7,6 +7,7 @@ import FeedPage from './FeedPage';
 // import { Route, withRouter, Switch } from 'react-router-dom';
 import API from '../API'
 import NavBar from './NavBar'
+import Following from './Following';
 
 
 class Home extends React.Component {
@@ -29,7 +30,9 @@ class Home extends React.Component {
         })
         API.getUser(this.props.user_id).then(user_object => this.setState({
             user: user_object,
-            lists: user_object.lists
+            lists: user_object.lists,
+            following_users: user_object.userFollows,
+            following_lists: user_object.listFollows
           }))
     }
 
@@ -75,7 +78,8 @@ class Home extends React.Component {
                 <ListContainer user_id={this.props.user_id} lists={this.state.lists} add_list={this.addListToUser} refreshLists={this.refreshLists} deleteList={this.deleteList} scrollToNewList={this.scrollToNewList}/> </>: null}
                 {this.state.page === "lists" ? <ListsPage lists={this.state.lists} refreshLists={this.refreshLists} deleteList={this.deleteList}/> : null}
                 {this.state.page === "feed" ? <FeedPage lists={this.state.lists} refreshLists={this.refreshLists} deleteList={this.deleteList}/> : null}
-                {this.state.page === "connect" ? <Connect user_id={this.props.user_id}/> : null}
+                {this.state.page === "connect" ? <Connect user_id={this.props.user_id} lists={this.state.lists} refreshLists={this.refreshLists}/> : null}
+                {this.state.page === "following" ? <Following user_id={this.props.user_id} following_users={this.state.following_users} following_lists={this.state.following_lists} lists={this.state.lists} refreshLists={this.refreshLists}/>: null }
             </div>
         )
     }

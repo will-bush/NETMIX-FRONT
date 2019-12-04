@@ -1,10 +1,10 @@
 import React from 'react';
-import API from '../API';
+// import API from '../API';
 import './MovieCard.css';
-import Details from './Details';
-import Watch from './Watch';
-import Review from './Review';
-import Remove from './Remove';
+// import Details from './Details';
+// import Watch from './Watch';
+// import Review from './Review';
+// import Remove from './Remove';
 import poster from '../poster.png';
 
 class EmptyCard extends React.Component {
