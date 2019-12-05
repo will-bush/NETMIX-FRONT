@@ -19,6 +19,7 @@ class SimpleSlider extends React.Component {
         <div className="sliderSection">
         <h1>{this.props.list_data.list_name}</h1>
         <p>{this.props.list_data.description}</p>
+        <a href="#search"><p className="delete">Add items to this list</p></a>
         {/* <p className="delete" onClick={() => this.props.deleteList(this.props.list_data.id)}>Delete list</p> */}
       <Slider {...settings}>
         {/* {this.props.list_data.listings && this.props.list_data.listings.map(listing =>

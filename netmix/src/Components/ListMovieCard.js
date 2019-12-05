@@ -8,7 +8,7 @@ import Remove from './Remove';
 import poster from '../poster.png';
 import AddExisting from './AddExisting'
 
-class MovieCard extends React.Component {
+class ListMovieCard extends React.Component {
 
     state = {
         content: {},
@@ -63,9 +63,9 @@ class MovieCard extends React.Component {
 					REVIEW
 				</button>
 				{/* <!-- REMOVE --> */}
-				<button onClick={() => this.setState({view: "remove"})}>
+				{/* <button onClick={() => this.setState({view: "remove"})}>
 					REMOVE
-				</button>
+				</button> */}
 				{/* <!--ADD TO LIST --> */}
 				<button onClick={() => this.setState({view: "add"})}>
 					ADD TO LIST
@@ -88,7 +88,7 @@ class MovieCard extends React.Component {
         {this.state.view === "details" ? <Details movie={this.state.content} hide={this.hideExpandedView}/> : null}
         {this.state.view === "watch" ? <Watch movie={this.state.content} hide={this.hideExpandedView}/> : null}
         {this.state.view === "review" ? <Review movie={this.state.content} hide={this.hideExpandedView} listing_data={this.props.listing_data}/> : null}
-        {this.state.view === "remove" ? <Remove movie={this.state.content} hide={this.hideExpandedView} listing_data={this.props.listing_data} refreshLists={this.props.refreshLists}/> : null}
+        {/* {this.state.view === "remove" ? <Remove movie={this.state.content} hide={this.hideExpandedView} listing_data={this.props.listing_data} refreshLists={this.props.refreshLists}/> : null} */}
 		{this.state.view === "add" ? <AddExisting movie={this.state.content} hide={this.hideExpandedView} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.props.resetSearch}/> : null}
 	</div>
 // </div>
@@ -96,4 +96,4 @@ class MovieCard extends React.Component {
     }
 }
 
-export default MovieCard;
+export default ListMovieCard;

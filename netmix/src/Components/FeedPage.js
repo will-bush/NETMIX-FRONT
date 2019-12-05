@@ -12,7 +12,7 @@ class FeedPage extends React.Component {
     }
 
     componentDidMount() {
-        API.getUser(24)
+        API.getUser(3)
         // .then(resp => console.log(resp.lists))
         .then(resp => this.setState({
             netmix_lists: resp.lists

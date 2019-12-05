@@ -11,6 +11,7 @@ class NavBar extends React.Component {
                 <ul className="navbar">
                 <li><img className="navLogo" src={logo} alt='logo' onClick={() => this.props.setPage("")}/></li>
                     {/* <li><p onClick={() => this.props.setPage("")}>HOME</p></li> */}
+                    <a href="#search"><li><p>Search</p></li></a>
                     <li><p onClick={() => this.props.setPage("lists")}>My Lists</p></li>
                     <a href="#yourlists"><li><p>Create New List</p></li></a>
                     <li><p onClick={() => this.props.setPage("feed")}>Get Inspired</p></li>

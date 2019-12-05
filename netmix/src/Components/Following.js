@@ -1,7 +1,7 @@
 import React from 'react';
 import API from '../API';
 import Button from '@material-ui/core/Button';
-import UserDisplayComponent from './UserDisplayComponent'
+import FollowDisplayComponent from './FollowDisplayComponent'
 
 class Following extends React.Component {
 
@@ -9,9 +9,11 @@ class Following extends React.Component {
         following_users: [],
         following_lists: [],
         selected_user: null
+        
     }
 
     componentDidMount() {
+        this.props.refreshLists()
         if (this.props.following_users) {
             this.props.following_users.map(object => this.getUserById(object.following_id))
         }
@@ -39,10 +41,9 @@ class Following extends React.Component {
         return (
             <div className="myListsContainer">
             <div className="blackHeader">
-                <h1>Select a profile</h1>
+                <h1>You are following...</h1>
                 {this.state.following_users ? this.state.following_users.map(user => <div className="listItems"><Button variant='contained' color='secondary' onClick={() => this.setUser(user)}>{user.username}</Button></div>) : null}
-                {this.state.selected_user ? <UserDisplayComponent user={this.state.selected_user} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists}/> : null }
-                {/* {this.state.following_list_ids ? <h1>We got some lists!</h1> : null} */}
+                {this.state.selected_user ? <FollowDisplayComponent user={this.state.selected_user} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists}/> : null }
             </div>
             </div>
         )

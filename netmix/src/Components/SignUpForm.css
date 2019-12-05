@@ -6,7 +6,7 @@
 
 .background {
     /* background-color: rgb(66, 65, 65); */
-    background-image: url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+    background-image: url("https://images.unsplash.com/photo-1512149074996-e923ac45be6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
     background-repeat: no-repeat;
     min-height: 980px;
     height: auto;
@@ -40,4 +40,9 @@ p {
 
 .error {
     color: rgb(235, 52, 68);
+}
+
+.darklogo {
+    width: 400px;
+    margin-top: 100px;
 }

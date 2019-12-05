@@ -15,7 +15,8 @@ class Home extends React.Component {
     state = {
         user: {},
         lists: [],
-        page: ""
+        page: "",
+        following_users: []
     }
 
     setPage = (page) => {
@@ -50,7 +51,8 @@ class Home extends React.Component {
 
    refreshLists = () => {
     API.getUser(this.props.user_id).then(user_object => this.setState({
-        lists: user_object.lists
+        lists: user_object.lists,
+        following_users: user_object.userFollows
       }))
     }
 

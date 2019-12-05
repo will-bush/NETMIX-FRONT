@@ -8,7 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import './SignUpForm.css';  
-import logo from '../netmix.png'
+import logo from '../netmix_drop.png'
 
 export class SignUpForm extends Component {
   state = {
@@ -41,7 +41,7 @@ export class SignUpForm extends Component {
 
     return (
       <div className="background">
-        <img className="logo" src={logo} alt='logo' />
+        <img className="darklogo" src={logo} alt='logo' />
         <Container className="contain" component="main" maxWidth="xs">
       <CssBaseline />
       <div>

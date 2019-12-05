@@ -6,6 +6,7 @@ import ResultCard from './ResultCard';
 import './SearchComponent.css';
 // import NewListForm from './NewListForm';
 import ResultsSlider from "./ResultsSlider";
+import ResultsSlider2 from "./ResultsSlider2";
 import logo from '../netmix.png'
 
 class SearchComponent extends React.Component {
@@ -78,8 +79,12 @@ class SearchComponent extends React.Component {
           SUBMIT
         </Button>
                 {this.state.selected_result ? <ResultCard movie={this.state.selected_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch}/> : null }
-                {this.state.search_result && this.state.search_result.Response === "True" && this.state.search_result.Search.length > 1 ? <div className="ResultsSliderContainer"><ResultsSlider results={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch} displayResult={this.displayResult}/></div>
+                {this.state.search_result && this.state.search_result.Response === "True" && this.state.search_result.Search.length > 4 ? <div className="ResultsSliderContainer"><ResultsSlider results={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch} displayResult={this.displayResult}/></div>
                 : null }
+                {this.state.search_result && this.state.search_result.Response === "True" && this.state.search_result.Search.length > 1 && this.state.search_result.Search.length < 5 ? <div className="ResultsSliderContainer"><ResultsSlider2 results={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch} displayResult={this.displayResult}/></div>
+                : null }
+                {/* {this.state.search_result && this.state.search_result.Response === "True" && this.state.search_result.Search.length === 2  ? <div className="ResultsSliderContainer"><ResultsSlider2 results={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch} displayResult={this.displayResult}/></div>
+                : null } */}
                 {this.state.search_result && this.state.search_result.Response === "True" && this.state.search_result.Search.length === 1 ? this.displayResult(this.state.search_result.Search[0].imdbID) : null}
                 {this.state.search_result && this.state.search_result.Response === "False" ? <h3>Sorry - we couldn't find anything for that search term.<br/><br/>Please try again.</h3> : null}
             </div>
