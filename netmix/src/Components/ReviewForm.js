@@ -15,7 +15,6 @@ class ReviewForm extends React.Component {
 
     handleSubmit = () => {
         API.postReview(this.props.id, this.state.review)
-        // .then(resp => console.log(resp))
         .then( resp => this.props.addReviewToState(resp.review))
       }
 
@@ -29,14 +28,12 @@ class ReviewForm extends React.Component {
             <div>
                 <h3>Leave a review</h3>
                 <TextField
-                    // id="filled-multiline-static"
                     name="review"
                     value={review}
                     onChange={handleChange}
                     label="Write your review here"
                     multiline
                     rows="4"
-                    // defaultValue=""
                     className="reviewForm"
                     margin="normal"
                     variant="filled"
@@ -45,9 +42,7 @@ class ReviewForm extends React.Component {
                     style = {{width: 684}}
                 />
                 <Button onClick={this.handleSubmit} className="submitButton" variant='contained' color='secondary'>SUBMIT</Button>
-
             </div>
-
         )
     }
 }

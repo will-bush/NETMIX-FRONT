@@ -16,11 +16,8 @@ class SignInForm extends React.Component {
   handleSubmit = () => {
     API.signIn(this.state.username, this.state.password)
       .then(data => {
-        // check if we got an error back
         if (data.error) throw Error(data.error)
-        // here we know for sure that there was no error
         this.props.signIn(data)
-        // console.log(data)
         this.props.history.push('/home')
       })
       .catch(error => console.log(error))
@@ -39,9 +36,6 @@ class SignInForm extends React.Component {
         <Container className="contain" component="main" maxWidth="xs">
       <CssBaseline />
       <div>
-        {/* <Avatar>
-          <LockOutlinedIcon />
-        </Avatar> */}
         <Typography className="title" component="h1" variant="h5">
           Sign In
         </Typography>
@@ -58,7 +52,6 @@ class SignInForm extends React.Component {
           name='username'
           type="text"
           required
-          // fullWidth
         />
         <br />
         <TextField
@@ -73,7 +66,6 @@ class SignInForm extends React.Component {
           name='password'
           type='password'
           required
-          // fullWidth
         />
         <br />
         <Button onClick={handleSubmit} variant='contained' color="secondary">

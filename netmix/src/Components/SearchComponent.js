@@ -4,7 +4,6 @@ import Button from '@material-ui/core/Button'
 import API from '../API'
 import ResultCard from './ResultCard';
 import './SearchComponent.css';
-// import NewListForm from './NewListForm';
 import ResultsSlider from "./ResultsSlider";
 import ResultsSlider2 from "./ResultsSlider2";
 import logo from '../netmix.png'
@@ -60,7 +59,6 @@ class SearchComponent extends React.Component {
         return (
             <div className="search" id="search">
                 <img className="logo" src={logo} alt='logo' />
-                {/* {this.props.lists.length === 0 ? <NewListForm user_id={this.props.user_id} add_list={this.props.add_list} reset={this.resetListForm}/> : null} */}
                 <TextField
                 variant="filled"
                 className="input"
@@ -83,8 +81,6 @@ class SearchComponent extends React.Component {
                 : null }
                 {this.state.search_result && this.state.search_result.Response === "True" && this.state.search_result.Search.length > 1 && this.state.search_result.Search.length < 5 ? <div className="ResultsSliderContainer"><ResultsSlider2 results={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch} displayResult={this.displayResult}/></div>
                 : null }
-                {/* {this.state.search_result && this.state.search_result.Response === "True" && this.state.search_result.Search.length === 2  ? <div className="ResultsSliderContainer"><ResultsSlider2 results={this.state.search_result} user_id={this.props.user_id} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.resetSearch} displayResult={this.displayResult}/></div>
-                : null } */}
                 {this.state.search_result && this.state.search_result.Response === "True" && this.state.search_result.Search.length === 1 ? this.displayResult(this.state.search_result.Search[0].imdbID) : null}
                 {this.state.search_result && this.state.search_result.Response === "False" ? <h3>Sorry - we couldn't find anything for that search term.<br/><br/>Please try again.</h3> : null}
             </div>

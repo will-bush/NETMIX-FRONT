@@ -3,8 +3,6 @@ import API from '../API';
 import './MovieCard.css';
 import Details from './Details';
 import Watch from './Watch';
-// import Review from './Review';
-// import Remove from './Remove';
 import poster from '../poster.png';
 import AddExisting from './AddExisting'
 
@@ -31,10 +29,8 @@ class ShowCard extends React.Component {
 
     render() {
 
-        return (
-            // <div>
-            //     <img src={this.state.content.Poster}/>
-            //     <h3>{this.state.content.Title}</h3>
+    return (
+
     <div className="wrapper">
 	<div className="main_card">
 		<div className="card_left">
@@ -47,25 +43,15 @@ class ShowCard extends React.Component {
 					<p className="time">{this.state.content.Runtime}</p>
 				</div>
 				<p className="disc">{this.state.content.Plot}</p>
-				{/* <a href={"https://www.imdb.com/title/" + this.state.content.imdbID} target="_blank" rel="noopener noreferrer">Read More</a> */}
 			<div className="social-btn">
-        {/* <!-- SHOW INFO --> */}
+       			 {/* <!-- SHOW INFO --> */}
 				<button onClick={() => this.setState({view: "details"})}>
                 <i className="fas fa-play"></i>MORE INFO
-                {/* {this.state.show_detail ? "HIDE INFO" : "MORE INFO"} */}
 				</button>
 				{/* <!-- GET SOURCES--> */}
 				<button onClick={() => this.setState({view: "watch"})}>
 					<i className="fas fa-download"></i> WATCH
 				</button >
-				{/* <!--CREATE REVIEW --> */}
-				{/* <button onClick={() => this.setState({view: "review"})}>
-					<i className="fas fa-thumbs-up"></i> REVIEW
-				</button> */}
-				{/* <!-- REMOVE --> */}
-				{/* <button onClick={() => this.setState({view: "remove"})}>
-					<i className="fas fa-star"></i>REMOVE
-				</button> */}
 				{/* <!--ADD TO LIST --> */}
 				<button onClick={() => this.setState({view: "add"})}>
 					<i class="fas fa-thumbs-up"></i> ADD TO LIST
@@ -88,11 +74,7 @@ class ShowCard extends React.Component {
         {this.state.view === "details" ? <Details movie={this.state.content} hide={this.hideExpandedView}/> : null}
         {this.state.view === "watch" ? <Watch movie={this.state.content} hide={this.hideExpandedView}/> : null}
 		{this.state.view === "add" ? <AddExisting movie={this.state.content} hide={this.hideExpandedView} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.props.resetSearch}/> : null}
-
-        {/* {this.state.view === "review" ? <Review movie={this.state.content} hide={this.hideExpandedView} listing_data={this.props.listing_data}/> : null} */}
-        {/* {this.state.view === "remove" ? <Remove movie={this.state.content} hide={this.hideExpandedView} listing_data={this.props.listing_data} refreshLists={this.props.refreshLists}/> : null} */}
 	</div>
-// </div>
         )
     }
 }

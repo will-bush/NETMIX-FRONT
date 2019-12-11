@@ -1,8 +1,4 @@
 import React from 'react';
-// import API from '../API';
-// import Button from '@material-ui/core/Button';
-// import ListComponent from './ListComponent';
-// import NewlistForm from './NewListForm';
 import './ListContainer.css';
 import RecentSlider from "./RecentSlider";
 
@@ -24,9 +20,9 @@ class RecentlyAdded extends React.Component {
             <div className="listContainer">
                 {this.props.netmix_lists ?
                 this.props.netmix_lists.map(list =>
-                <div className="ListSliderContainer">
-                <RecentSlider id={list.id } key={list.id } list_data={list} refreshLists={this.props.refreshLists} deleteList={this.props.deleteList} lists={this.props.lists}/></div>)
-                : null}
+                    <div className="ListSliderContainer">
+                    <RecentSlider id={list.id } key={list.id } list_data={list} refreshLists={this.props.refreshLists} deleteList={this.props.deleteList} lists={this.props.lists}/></div>)
+                    : null}
             </div>
         )
     }

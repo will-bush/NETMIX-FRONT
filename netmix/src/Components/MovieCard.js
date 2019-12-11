@@ -32,9 +32,6 @@ class MovieCard extends React.Component {
     render() {
 
         return (
-            // <div>
-            //     <img src={this.state.content.Poster}/>
-            //     <h3>{this.state.content.Title}</h3>
     <div className="wrapper">
 	<div className="main_card">
 		<div className="card_left">
@@ -47,12 +44,10 @@ class MovieCard extends React.Component {
 					<p className="time">{this.state.content.Runtime}</p>
 				</div>
 				<p className="disc">{this.state.content.Plot}</p>
-				{/* <a href={"https://www.imdb.com/title/" + this.state.content.imdbID} target="_blank" rel="noopener noreferrer">Read More</a> */}
 			<div className="social-btn">
-        {/* <!-- SHOW INFO --> */}
+        		{/* <!-- SHOW INFO --> */}
 				<button onClick={() => this.setState({view: "details"})}>
                 MORE INFO
-                {/* {this.state.show_detail ? "HIDE INFO" : "MORE INFO"} */}
 				</button>
 				{/* <!-- GET SOURCES--> */}
 				<button onClick={() => this.setState({view: "watch"})}>
@@ -91,7 +86,6 @@ class MovieCard extends React.Component {
         {this.state.view === "remove" ? <Remove movie={this.state.content} hide={this.hideExpandedView} listing_data={this.props.listing_data} refreshLists={this.props.refreshLists}/> : null}
 		{this.state.view === "add" ? <AddExisting movie={this.state.content} hide={this.hideExpandedView} lists={this.props.lists} refreshLists={this.props.refreshLists} resetSearch={this.props.resetSearch}/> : null}
 	</div>
-// </div>
         )
     }
 }

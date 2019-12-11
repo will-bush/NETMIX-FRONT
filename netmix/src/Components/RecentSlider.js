@@ -16,15 +16,14 @@ class RecentSlider extends React.Component {
     };
     return (
         <div className="sliderSection">
-        <h1>{this.props.list_data.list_name}</h1>
-        <p>{this.props.list_data.description}</p>
-        {/* <p className="delete" onClick={() => this.props.deleteList(this.props.list_data.id)}>Delete list</p> */}
-      <Slider {...settings}>
-        {this.props.list_data.listings && this.props.list_data.listings.map(listing =>
+            <h1>{this.props.list_data.list_name}</h1>
+            <p>{this.props.list_data.description}</p>
+            <Slider {...settings}>
+            {this.props.list_data.listings && this.props.list_data.listings.map(listing =>
             <div><ShowCard key={listing.id} listing_data={listing} refreshLists={this.props.refreshLists} lists={this.props.lists}/></div>
             )}  
-      </Slider>
-      </div>
+            </Slider>
+        </div>
     );
   }
 }

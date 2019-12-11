@@ -1,5 +1,3 @@
-// const TEST_URL = "http://www.omdbapi.com/?apikey=a12b58ca&t=doctor+sleep"
-
 import { baseUrl } from './config'
 
 const signUpUrl = baseUrl + '/users'
@@ -14,7 +12,6 @@ const userURL = baseUrl + '/users/'
 const sourcesURL = "https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term="
 const followUserURL = baseUrl + '/user_follows'
 const followListURL = baseUrl + '/list_follows'
-// const findUserURL = baseUrl + '/find/'
 
 const get = url =>
   fetch(url, {

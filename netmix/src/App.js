@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 import { Route, withRouter, Switch } from 'react-router-dom'
-
-// import Header from './Components/Header'
 import SignInForm from './Components/SignInForm'
 import SignUpForm from './Components/SignUpForm'
 import Home from './Components/Home'
-
 import './App.css'
 import API from './API'
 
@@ -20,7 +17,6 @@ class App extends Component {
       user_id: user.id,
     })
     localStorage.setItem('token', user.token)
-    // localStorage.setItem('lists', user.lists)
   }
 
   signOut = () => {
@@ -46,9 +42,7 @@ class App extends Component {
   render () {
     return (
       <div className='App'>
-        {/* <Header username={this.state.username} signOut={this.signOut} /> */}
         <Switch>
-          {/* <Route exact path='/' component={() => <h1>Home page!</h1>} /> */}
           <Route
             path='/' exact
             component={routerProps => (

@@ -8,9 +8,7 @@
 }
 
 .myListsContainer {
-    /* background-color: #1c1e21; */
     background-image: linear-gradient(to right, #060607, rgb(66, 66, 66), #060607);
-    /* padding: 20px; */
     min-height: 980px;
     height: auto;
     padding-bottom: 50px;
@@ -31,11 +29,4 @@
   align-content: center;
   align-items:center;
   transition: transform .4s;
-  /* border:1px solid #e3f2fd; */
 }
-
-/* .listItems:hover {
-    color: #e60a14;
-    transform: scale(1.8);
-    font-weight: 300;
-} */

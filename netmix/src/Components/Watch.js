@@ -1,9 +1,6 @@
 import React from 'react';
 import './Watch.css';
 import Button from '@material-ui/core/Button'
-// import API from '../API';
-// import WatchLink from './WatchLink';
-
 
 class Watch extends React.Component {
 
@@ -38,7 +35,6 @@ class Watch extends React.Component {
         })
         console.log(this.state.error)}
         else
-        //  console.log(refined)
          {this.setState({
              refinedSources: refined[0].locations
          })
@@ -64,13 +60,11 @@ class Watch extends React.Component {
             <div className="watch">
                 <div class="watch_content">
                      <h3>Watch {this.props.movie.Title} online</h3>
-                    <Button variant='contained' color='secondary' onClick={() => this.getSources(this.props.movie.Title)}>CLICK TO FIND AVAILABLE STREAMS</Button>
-                     {/* {this.state.refinedSources.length > 0 ? <p>THIS IS HOW WE MAP!</p> : null} */}
-                    {/* {this.state.streams.length > 0 ? this.state.streams.map(stream => <p>{stream.display_name}</p>) : null} */}
+                     <Button variant='contained' color='secondary' onClick={() => this.getSources(this.props.movie.Title)}>CLICK TO FIND AVAILABLE STREAMS</Button>
                     <div className="SourceRow">
-                    {this.state.error ? <p>{this.state.error}</p> : null}
-                    {this.state.streams.length > 0 ? <p>You can currently watch {this.props.movie.Title} on the following sites:</p> : null}
-                    {this.state.streams.length > 0 ? this.state.streams.map(stream => <div className="sourceColumn"><a href={stream.url} target="_blank" rel="noopener noreferrer"><img className="sourceIcon" src={stream.icon} alt={stream.name}/></a></div>) : null}
+                        {this.state.error ? <p>{this.state.error}</p> : null}
+                        {this.state.streams.length > 0 ? <p>You can currently watch {this.props.movie.Title} on the following sites:</p> : null}
+                        {this.state.streams.length > 0 ? this.state.streams.map(stream => <div className="sourceColumn"><a href={stream.url} target="_blank" rel="noopener noreferrer"><img className="sourceIcon" src={stream.icon} alt={stream.name}/></a></div>) : null}
                     </div>
                     <Button className="hide_details" variant='contained' color='primary' onClick={this.props.hide}>HIDE</Button>
                 </div>

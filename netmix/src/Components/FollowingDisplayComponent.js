@@ -1,39 +1,14 @@
 import React from 'react';
-// import API from '../API';
 import UserSlider from "./UserSlider";
-import Button from '@material-ui/core/Button'
-import API from '../API';
 
 
 class FollowingDisplayComponent extends React.Component {
-
-    // state = {
-    //     user: {},
-    //     lists: []
-    // }
-
-    // componentDidMount() {
-    //     API.getUser(this.props.user.id).then(user_object => this.setState({
-    //         user: user_object,
-    //         lists: user_object.lists
-    //       }))
-    // }
-
-    // unfollowUser = (profileToFollowID) => {
-    //     // console.log(profileToFollowID, this.props.user_id)
-    //     API.unfollowUser(profileToFollowID, this.props.user_id)
-    //     // .then(resp => console.log(resp))
-
-    // }
 
     render() {
 
         return (
             <div>
                 <h1>You are viewing {this.props.user.username}'s lists.</h1>
-                {/* <Button onClick={() => this.unfollowUser(this.props.user.id)} variant='contained' color='secondary'>
-                  UNFOLLOW {this.props.user.username}
-                </Button> */}
                     {this.props.user.lists ?
                       this.props.user.lists.map(list =>
                         <div className="connectSliderContainer">

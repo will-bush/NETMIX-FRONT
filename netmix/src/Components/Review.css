@@ -2,7 +2,6 @@
 	color: #fff;
 	width: 760px;
 	height: auto;
-    /* margin: 50px auto; */
     margin-top: -50px;
     margin-bottom: 50px;
     margin-left: auto;
@@ -13,10 +12,6 @@
 	max-width: 770px;
 	background: #1c1e21; 
 	border-radius: 0px 0px 10px 10px;
-	/* background: -webkit-linear-gradient(to right, #92FE9D, #00C9FF);
-	background: -webkit-gradient(linear, left top, right top, from(#92FE9D), to(#00C9FF));
-	background: -webkit-linear-gradient(left, #92FE9D, #00C9FF);
-	background: -o-linear-gradient(left, #92FE9D, #00C9FF); */
 	background: linear-gradient(to right, #1c1e21, #1c1e21); 
 	-webkit-box-shadow: 0 0 40px rgba(0,0,0,0.3); 
 	        box-shadow: 0 0 40px rgba(0,0,0,0.3);

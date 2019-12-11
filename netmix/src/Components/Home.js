@@ -4,7 +4,6 @@ import ListContainer from './ListContainer';
 import ListsPage from './ListsPage';
 import Connect from './Connect';
 import FeedPage from './FeedPage';
-// import { Route, withRouter, Switch } from 'react-router-dom';
 import API from '../API'
 import NavBar from './NavBar'
 import Following from './Following';
@@ -66,10 +65,6 @@ class Home extends React.Component {
             this.refreshLists()
           }, 500);
     }
-
-    // scrollToNewList = (id) => {
-    //     document.getElementById(id).scrollIntoView();
-    // }
 
     render() {
 

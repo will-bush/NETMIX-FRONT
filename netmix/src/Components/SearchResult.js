@@ -18,9 +18,7 @@ class SearchResult extends React.Component {
     handleAddClick = (movie, listID) => {
         API.addMovieToDB(movie)
         .then(resp => API.addMovieToList(listID, resp.id))
-        // .then(res => this.props.showMovieOnList(listID, res.content))
         .then(this.props.refreshData())
-        // .then(res => console.log(res))
     }
 
     handleChange = (event) => {
@@ -33,7 +31,6 @@ class SearchResult extends React.Component {
 
         return (
             <div>
-                {/* <MovieCard movie={this.props.movie} add={this.handleAddClick} change={}this.handleChange/> */}
                 <img src={this.props.movie.Poster} />
                 <h1>{this.props.movie.Title}</h1>
                  <Button variant='contained' color='primary' onClick={() => this.handleAddClick(this.props.movie, this.state.value)}>ADD TO LIST</Button>
@@ -41,9 +38,6 @@ class SearchResult extends React.Component {
                  <br />
                  <br />
                 {this.state.show_detail ? <SearchDetails movie={this.props.movie}/> : null}
-                {/* {this.props.lists.map(list => <Button variant='contained' color='primary' value={list.id}>{list.list_name}</Button>)} */}
-                {/* <br />
-                <br /> */}
                 <label>Choose a list:
                 <select value={this.state.value} onChange={this.handleChange}>
                  {this.props.lists.map(list => <option value={list.id}>{list.list_name}</option>)}

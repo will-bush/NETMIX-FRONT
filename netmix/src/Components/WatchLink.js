@@ -6,7 +6,7 @@ class WatchLink extends React.Component {
 
         return (
             <div>
-    <h1>{this.props.source.display_name}</h1>
+                <h1>{this.props.source.display_name}</h1>
             </div>
         )
     }

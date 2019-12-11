@@ -18,10 +18,8 @@ class NewListForm extends React.Component {
       }
       API.createList(listData)
       .then(() => this.props.refreshLists())
-      // .then(resp => this.props.add_list(resp))
       .then(this.props.reset())
-      // .then(this.props.refreshLists())
-    //   .then(console.log)
+      window.scrollTo(0,9999);
   }
 
   handleChange = event =>

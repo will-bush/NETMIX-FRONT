@@ -1,5 +1,4 @@
 import React from 'react';
-// import ListContainer from './ListContainer';
 import API from '../API';
 import RecentlyAdded from './RecentlyAdded';
 import './FeedPage.css';
@@ -13,7 +12,6 @@ class FeedPage extends React.Component {
 
     componentDidMount() {
         API.getUser(3)
-        // .then(resp => console.log(resp.lists))
         .then(resp => this.setState({
             netmix_lists: resp.lists
         }))

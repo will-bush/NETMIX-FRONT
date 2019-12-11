@@ -23,11 +23,6 @@ class AddExisting extends React.Component {
         .then(resp => API.addMovieToList(listID, resp.id))
         .then(() => this.props.refreshLists())
         .then(this.props.hide())
-        // .then(this.props.resetSearch())
-        // window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
-        // .then(res => this.props.showMovieOnList(listID, res.content))
-        // .then(this.props.refreshData())
-        // .then(res => console.log(res))
     }
 
     handleChange = (event) => {
@@ -40,7 +35,6 @@ class AddExisting extends React.Component {
             <div className="add">
                 <div class="add_content">
                     <h3>Choose a list:</h3>
-                    {/* <p>Add a form here that allows a user to select an existing list to add the result to.</p> */}
                     <label>
                         <select value={this.state.value} onChange={this.handleChange}>
                             {this.props.lists.map(list => <option value={list.id}>{list.list_name}</option>)}
@@ -48,12 +42,8 @@ class AddExisting extends React.Component {
                     </label>
                     <br />
                     <br />
-                    {/* <p>MAYBE - Allow user to leave a written or scored review of the movie if they wish.</p>
-                    <p>MAYBE - Allow user to create a new form at this point if they wish.</p>
-                    <p>IS THIS FEATURE BETTER LOCATED IN THE MOVIECARD COMPONENT?</p> */}
                     <Button variant='contained' color='secondary' onClick={() => this.handleAddClick(this.props.movie, this.state.value)}>ADD TO LIST</Button>
                     <Button className="hide_details" variant='contained' color='primary' onClick={this.props.hide}>HIDE</Button>
-                        {/* <p>{this.props.movie.Actors}</p> */}
                 </div>
             </div>
         )
